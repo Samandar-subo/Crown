@@ -1,0 +1,86 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    background-image: url("images/main_page.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+
+    color: white; 
+    font-family: "NDAstroneer", sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* если хочешь круглый */
+}
+
+.logo span {
+    font-family: "NDAstroneer", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFD700; /* золотой */
+}
+
+/* Навигация */
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #FFD700; /* при наведении золотой */
+}
+
+
+
+@font-face {
+    font-family: "NDAstroneer";
+    src: url(fonts/NDAstroneer-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-width: 900px) {
+    nav ul {
+        gap: 15px;
+        font-size: 16px;
+    }
+    .logo span {
+        font-size: 22px;
+    }
+}
+
+
+

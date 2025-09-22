@@ -286,3 +286,50 @@ nav a:hover {
 
 
 
+
+
+
+.about-footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 50px 40px;
+  text-align: center;
+  margin-top: 80px;
+  border-top: 3px solid #ffcc00;
+}
+
+.about-footer h2 {
+  font-size: 22px;
+  color: #ccc;
+}
+
+.about-footer h2 span {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.about-footer h3 {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #FFD700;
+}
+
+.about-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.about-footer ul li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.about-footer a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.about-footer a:hover {
+  text-decoration: underline;
+}

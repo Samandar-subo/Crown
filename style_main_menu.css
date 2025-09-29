@@ -1,0 +1,242 @@
+/* -------------------- Общие стили -------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  background-image: url("images/main_page.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  font-family: "NDAstroneer", sans-serif;
+}
+
+/* -------------------- Шапка сайта -------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items:center ter;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* логотип круглый */
+}
+
+.logo span {
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFD700; /* золотой */
+  font-family: "NDAstroneer", sans-serif;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 19px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+/* -------------------- Категории + поиск -------------------- */
+.category-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #223344, #2a3a50);
+  padding: 10px 30px;
+  margin-top: 70px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.category-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.category-menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.category-menu li a:hover {
+  color: #FFD700;
+}
+
+.search-box {
+  display: flex;
+  background-color: #1e2a3a;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-style: italic;
+}
+
+.search-box button {
+  background-color: #29415d;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.search-box button img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+/* -------------------- Каталог игр -------------------- */
+.game-section {
+  padding: 140px 40px 80px;
+}
+
+.row-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 40px;
+}
+
+.game-box {
+  width: 420px; /* уменьшили ширину карточки */
+  background-color: #2a2f38;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.game-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.game-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.game-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game-info h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #FFD700;
+}
+
+.game-info p {
+  font-size: 18px; /* увеличил описание */
+  color: #ddd;
+  flex-grow: 1;
+}
+
+.price {
+  color: #a4d007;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.buy-btn {
+  display: inline-block;
+  padding: 6px 9px; /* уменьшили ширину кнопки на ~30% */
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #FFD700;
+  color: black;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.buy-btn:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+}
+
+
+/* Подробности */
+.details-btn {
+  background-color: #444c56;
+  color: white;
+}
+
+.details-btn:hover {
+  background-color: #5a6573;
+}
+
+
+/* -------------------- Поддержка адаптива -------------------- */
+@font-face {
+  font-family: "NDAstroneer";
+  src: url(fonts/NDAstroneer-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-width: 900px) {
+  nav ul {
+    gap: 15px;
+    font-size: 16px;
+  }
+  .logo span {
+    font-size: 22px;
+  }
+}

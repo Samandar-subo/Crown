@@ -1,0 +1,166 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    background-image: url("images/backrooms_bgimage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    
+
+    color: rgb(255, 255, 255); 
+    font-family: "NDAstroneer", sans-serif;
+}
+
+
+.game-page {
+    margin-top: 100px; 
+    padding: 40px;
+}
+
+/* Блок с картинкой и описанием */
+.game-hero {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.game-hero img {
+    width: 400px;
+    border-radius: 10px;
+}
+
+.game-info h1 {
+    color: #FFD700;
+    margin-top: 0;
+}
+
+.game-info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.game-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.game-info li {
+    margin: 8px 0;
+}
+
+.buy-btn {
+    display: inline-block;
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #e6c200;
+}
+
+/* Галерея скриншотов */
+.screenshots {
+    margin-top: 40px;
+}
+
+.screenshots h2 {
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* если хочешь круглый */
+}
+
+.logo span {
+    font-family: "NDAstroneer", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFD700; /* золотой */
+}
+
+/* Навигация */
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #FFD700; /* при наведении золотой */
+}
+
+
+
+@font-face {
+    font-family: "NDAstroneer";
+    src: url(fonts/NDAstroneer-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-width: 900px) {
+    nav ul {
+        gap: 15px;
+        font-size: 16px;
+    }
+    .logo span {
+        font-size: 22px;
+    }
+}

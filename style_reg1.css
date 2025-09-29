@@ -1,0 +1,84 @@
+body {
+    height: 100vh; 
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    background-image: url("images/main_page.webp");
+    background-size: cover;
+    background-position: center;
+    font-family: "NDAstroneer", sans-serif;
+    color: white;
+}
+
+.login-box {
+    background-color: rgba(0, 0, 0, 0.85); /* плотный полупрозрачный фон */
+    padding: 40px 35px;
+    border-radius: 15px;
+    width: 350px; /* фиксированная ширина как у регистрации */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.login-box h2 {
+    color: #FFD700;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.login-box label {
+    display: block;
+    margin: 8px 0 5px;
+    text-align: left;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    outline: none;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-box input[type="email"]:focus,
+.login-box input[type="password"]:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 5px #FFD700;
+}
+
+.login-box input[type="submit"] {
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.login-box input[type="submit"]:hover {
+    background-color: #e6c200;
+}
+
+.login-box a {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}

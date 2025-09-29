@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("images/main_page.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: "NDAstroneer", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 19px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+.game-page {
+  margin-top: 100px;
+  padding: 40px;
+}
+
+.game-hero {
+  display: flex;
+  gap: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.game-hero img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.game-info h1 {
+  color: #FFD700;
+}
+
+.buy-btn {
+  display: inline-block;
+  background: #FFD700;
+  color: black;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.buy-btn:hover {
+  background: #e6c200;
+}
+
+.screenshots {
+  margin-top: 40px;
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 30%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}

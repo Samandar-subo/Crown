@@ -202,3 +202,40 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+
+
+.search-box {
+  display: flex;
+  background-color: #1e2a3a;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #333;
+  width: 400px;
+  
+}
+
+.search-box input {
+  flex: 1;               
+  padding: 6px 10px;      
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-style: italic;
+}
+
+
+.search-box button {
+  background-color: #29415d;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.search-box button img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+

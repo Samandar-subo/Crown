@@ -11,22 +11,22 @@ body {
     color: white;
 }
 
-.login-box {
-    background-color: rgba(0, 0, 0, 0.85); /* плотный полупрозрачный фон */
+.login-box2 {
+    background-color: rgba(0, 0, 0, 0.85); /* более плотный фон */
     padding: 40px 35px;
     border-radius: 15px;
-    width: 350px; /* фиксированная ширина как у регистрации */
+    width: 350px; /* фиксированная ширина */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
     text-align: center;
 }
 
-.login-box h2 {
+.login-box2 h2 {
     color: #FFD700;
     margin-bottom: 25px;
     font-size: 24px;
 }
 
-.login-box label {
+.login-box2 label {
     display: block;
     margin: 8px 0 5px;
     text-align: left;
@@ -34,8 +34,9 @@ body {
     color: #ddd;
 }
 
-.login-box input[type="email"],
-.login-box input[type="password"] {
+.login-box2 input[type="email"],
+.login-box2 input[type="name"],
+.login-box2 input[type="password"] {
     width: 100%;
     padding: 10px 12px;
     margin-bottom: 15px;
@@ -48,13 +49,14 @@ body {
     box-sizing: border-box;
 }
 
-.login-box input[type="email"]:focus,
-.login-box input[type="password"]:focus {
+.login-box2 input[type="email"]:focus,
+.login-box2 input[type="name"]:focus,
+.login-box2 input[type="password"]:focus {
     border-color: #FFD700;
     box-shadow: 0 0 5px #FFD700;
 }
 
-.login-box input[type="submit"] {
+.login-box2 input[type="submit"] {
     background-color: #FFD700;
     color: black;
     font-weight: bold;
@@ -67,18 +69,16 @@ body {
     font-size: 16px;
 }
 
-.login-box input[type="submit"]:hover {
+.login-box2 input[type="submit"]:hover {
     background-color: #e6c200;
 }
 
-.login-box a {
+.login-box2 a {
     color: #FFD700;
     text-decoration: none;
     font-size: 13px;
-    display: inline-block;
-    margin-top: 8px;
 }
 
-.login-box a:hover {
+.login-box2 a:hover {
     text-decoration: underline;
 }

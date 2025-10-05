@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .about-card {
   max-width: 800px;
   margin: 140px auto 100px;
@@ -21,10 +22,41 @@
 }
 
 .about-card a {
+=======
+.about-container {
+  padding: 150px 40px 100px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 10px;
+}
+
+.about-container h1, 
+.about-container h2 {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.about-container ul {
+  padding-left: 20px;
+}
+
+.about-container a {
+>>>>>>> 9e16655 (commit 14)
   color: #a4d007;
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 .about-card a:hover {
   text-decoration: underline;
+=======
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #aaa;
+  font-size: 14px;
+>>>>>>> 9e16655 (commit 14)
 }

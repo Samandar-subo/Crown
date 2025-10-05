@@ -27,7 +27,7 @@ body {
 
 .logo {
     display: flex;
-    align-items: center ter;
+    align-items: center;
     gap: 10px;
 }
 .logo img {

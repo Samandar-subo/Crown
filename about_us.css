@@ -1,30 +1,103 @@
+/* Основной фон страницы */
+body {
+  background: url('images/background.jpg') no-repeat center center fixed; /* Здесь вставь путь к своему фону */
+  background-size: cover;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер для всего раздела "О нас" */
+.about-container {
+  padding: 50px 20px;
+  max-width: 1000px; /* Ограничиваем ширину */
+  margin: 0 auto;    /* Центрируем контейнер */
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.5); /* Тень для контейнера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center; /* Центрируем текст */
+}
+
+/* Карточка с текстом */
 .about-card {
-  max-width: 800px;
-  margin: 140px auto 100px;
+  padding: 30px;
   background-color: #1b1f25;
   color: white;
-  padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.5);
   line-height: 1.6;
   font-size: 16px;
+  max-width: 800px;
+  margin: 20px 0; /* Добавляем отступы сверху и снизу */
+  background: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон для карточки */
 }
 
+/* Заголовки для карточки */
 .about-card h1, .about-card h2 {
   color: #FFD700;
   margin-bottom: 10px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
 }
 
+/* Стили для списка членов команды */
 .about-card ul {
   list-style: disc;
   margin-left: 20px;
 }
 
-.about-card a {
+/* Стили для ссылок в карточке */
+.about-container a {
   color: #a4d007;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
 }
 
+/* Эффект при наведении на ссылки */
 .about-card a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для футера */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+/* Логотип */
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Меню */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #FFD700;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
   text-decoration: underline;
 }

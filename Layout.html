@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CROWN Game Store</title>
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+  <div class="grid-container">
+    
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="Crown Logo">
+        <span>CROWN</span>
+      </div>
+
+      <div class="search-box">
+        <input type="text" placeholder="Поиск">
+        <button>
+          <img src="images/poisk.png" alt="🔍" >
+        </button>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="gallery.html">ГАЛЕРЕЯ</a></li>
+          <li><a href="gallery.html">ПРОФИЛ</a></li>
+          <li><a href="about_us.html">О НАС</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside>
+      <h2>Категории</h2>
+      <ul>
+        <li><a href="#" onclick="filterGames('all')">Все</a></li>
+        <li><a href="#" onclick="filterGames('action')">Экшен</a></li>
+        <li><a href="#" onclick="filterGames('racing')">Гонки</a></li>
+        <li><a href="#" onclick="filterGames('horror')">Хоррор</a></li>
+        <li><a href="#" onclick="filterGames('rpg')">RPG</a></li>
+        <li><a href="#" onclick="filterGames('shooter')">Шутеры</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="row-cards">
+
+        <!-- Backrooms -->
+        <div class="game-box" data-genre="horror">
+          <img src="images/BackRooms.png" alt="Backrooms" />
+          <div class="game-info">
+            <h2>Backrooms</h2>
+            <p>Action-horror: исследуйте жуткие коридоры и постарайтесь выбраться.</p>
+            <span class="price">4,99$</span>
+            <a href="backrooms_escsape_together.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- GTA V -->
+        <div class="game-box" data-genre="action">
+          <img src="images/gta5.jpg" alt="GTA V" />
+          <div class="game-info">
+            <h2>GTA V</h2>
+            <p>Культовая игра с тремя героями и открытым миром.</p>
+            <span class="price">29,99$</span>
+            <a href="gta5.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Forza Horizon 5 -->
+        <div class="game-box" data-genre="racing">
+          <img src="images/forza5.png" alt="Forza Horizon 5" />
+          <div class="game-info">
+            <h2>Forza Horizon 5</h2>
+            <p>Гоночная игра с открытым миром в Мексике.</p>
+            <span class="price">59,99$</span>
+            <a href="forza_horizon5.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Assassin’s Creed Valhalla -->
+        <div class="game-box" data-genre="action">
+          <img src="images/photo_13_2025-10-02_12-42-13.jpg" alt="AC Valhalla" />
+          <div class="game-info">
+            <h2>Assassin’s Creed Valhalla</h2>
+            <p>Эпическое приключение в эпоху викингов.</p>
+            <span class="price">39,99$</span>
+            <a href="assassinscreed.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Cyberpunk 2077 -->
+        <div class="game-box" data-genre="action">
+          <img src="images/photo_8_2025-10-02_12-42-13.jpg" alt="Cyberpunk 2077" />
+          <div class="game-info">
+            <h2>Cyberpunk 2077</h2>
+            <p>Будущее, корпорации и свобода выбора.</p>
+            <span class="price">49,99$</span>
+            <a href="cyberpunk.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- NFS Heat -->
+        <div class="game-box" data-genre="racing">
+          <img src="images/photo_11_2025-10-02_12-42-13.jpg" alt="NFS Heat" />
+          <div class="game-info">
+            <h2>Need for Speed Heat</h2>
+            <p>Гонки днём и ночью в открытом городе.</p>
+            <span class="price">19,99$</span>
+            <a href="nfs_heat.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+        <!-- F1 23 -->
+        <div class="game-box" data-genre="racing">
+          <img src="images/photo_10_2025-10-02_12-42-13.jpg" alt="F1 23" />
+          <div class="game-info">
+            <h2>F1 23</h2>
+            <p>Официальная серия Формулы 1.</p>
+            <span class="price">39,99$</span>
+            <a href="f1_23.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Resident Evil Village -->
+        <div class="game-box" data-genre="horror">
+          <img src="images/photo_9_2025-10-02_12-42-13.jpg" alt="Resident Evil Village" />
+          <div class="game-info">
+            <h2>Resident Evil Village</h2>
+            <p>Новый виток хоррор-серии Resident Evil.</p>
+            <span class="price">34,99$</span>
+            <a href="residentevil.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Outlast 2 -->
+        <div class="game-box" data-genre="horror">
+          <img src="images/photo_7_2025-10-02_12-42-13.jpg" alt="Outlast 2" />
+          <div class="game-info">
+            <h2>Outlast 2</h2>
+            <p>Выживание в страшных условиях и тьме.</p>
+            <span class="price">9,99$</span>
+            <a href="outlast2.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Witcher 3 -->
+        <div class="game-box" data-genre="rpg">
+          <img src="images/photo_3_2025-10-02_12-42-13.jpg" alt="Witcher 3" />
+          <div class="game-info">
+            <h2>The Witcher 3</h2>
+            <p>Легендарная RPG о Ведьмаке Геральте.</p>
+            <span class="price">19,99$</span>
+            <a href="witcher3.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Skyrim -->
+        <div class="game-box" data-genre="rpg">
+          <img src="images/photo_2025-10-02_12-40-28.jpg" alt="Skyrim" />
+          <div class="game-info">
+            <h2>Skyrim</h2>
+            <p>Эпическая RPG в открытом мире.</p>
+            <span class="price">14,99$</span>
+            <a href="skyrim.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Elden Ring -->
+        <div class="game-box" data-genre="rpg">
+          <img src="images/photo_2025-10-02_12-40-34.jpg" alt="Elden Ring" />
+          <div class="game-info">
+            <h2>Elden Ring</h2>
+            <p>RPG от создателей Dark Souls.</p>
+            <span class="price">59,99$</span>
+            <a href="eldenring.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Call of Duty MW -->
+        <div class="game-box" data-genre="shooter">
+          <img src="images/photo_1_2025-10-02_12-42-13.jpg" alt="Call of Duty MW" />
+          <div class="game-info">
+            <h2>Call of Duty: Modern Warfare</h2>
+            <p>Классический военный шутер.</p>
+            <span class="price">49,99$</span>
+            <a href="cod_mw.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+        <!-- Battlefield V -->
+        <div class="game-box" data-genre="shooter">
+          <img src="images/photo_2_2025-10-02_12-42-13.jpg" alt="Battlefield V" />
+          <div class="game-info">
+            <h2>Battlefield V</h2>
+            <p>Масштабные сражения Второй мировой войны.</p>
+            <span class="price">29,99$</span>
+            <a href="battlefield.html" class="buy-btn">Купить</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 CROWN Game Store. Все права защищены.</p>
+      <p><a href="gallery.html">Галерея</a> | <a href="about_us.html">О нас</a> | <a href="about_us.html">Контакты</a></p>
+    </footer>
+
+  </div>
+
+  <!-- JS фильтр -->
+  <script>
+    function filterGames(genre) {
+      const games = document.querySelectorAll('.game-box');
+      games.forEach(game => {
+        if (genre === 'all' || game.dataset.genre === genre) {
+          game.style.display = 'block';
+        } else {
+          game.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

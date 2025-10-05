@@ -1,84 +1,84 @@
 body {
-    height: 100vh; 
-    margin: 0;
-    display: flex;
-    justify-content: center; 
-    align-items: center;    
-    background-image: url("images/main_page.webp");
-    background-size: cover;
-    background-position: center;
-    font-family: "NDAstroneer", sans-serif;
-    color: white;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("images/main_page.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .login-box {
-    background-color: rgba(0, 0, 0, 0.85); /* плотный полупрозрачный фон */
-    padding: 40px 35px;
-    border-radius: 15px;
-    width: 350px; /* фиксированная ширина как у регистрации */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-    text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 12px;
+  width: 340px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.login-box h1 {
+  margin-top: 0;
+  color: #FFD700;
 }
 
 .login-box h2 {
-    color: #FFD700;
-    margin-bottom: 25px;
-    font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: normal;
 }
 
 .login-box label {
-    display: block;
-    margin: 8px 0 5px;
-    text-align: left;
-    font-size: 14px;
-    color: #ddd;
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: bold;
 }
 
-.login-box input[type="email"],
-.login-box input[type="password"] {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 15px;
-    border: 1px solid #333;
-    border-radius: 6px;
-    outline: none;
-    background-color: #1a1a1a;
-    color: white;
-    font-size: 14px;
-    box-sizing: border-box;
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: #f0f8ff;
 }
 
-.login-box input[type="email"]:focus,
-.login-box input[type="password"]:focus {
-    border-color: #FFD700;
-    box-shadow: 0 0 5px #FFD700;
+.login-btn {
+  background-color: #FFD700;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-.login-box input[type="submit"] {
-    background-color: #FFD700;
-    color: black;
-    font-weight: bold;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
-    font-size: 16px;
+.login-btn:hover {
+  background-color: #e6b800;
 }
 
-.login-box input[type="submit"]:hover {
-    background-color: #e6c200;
+.links {
+  margin-top: 15px;
+  font-size: 14px;
 }
 
-.login-box a {
-    color: #FFD700;
-    text-decoration: none;
-    font-size: 13px;
-    display: inline-block;
-    margin-top: 8px;
+.links a {
+  color: #ddddff;
+  text-decoration: none;
 }
 
-.login-box a:hover {
-    text-decoration: underline;
+.links a:hover {
+  text-decoration: underline;
 }

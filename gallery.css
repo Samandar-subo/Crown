@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "NDAstroneer", sans-serif;
-  background: url("images/crownph.png") center/cover no-repeat fixed;
+  background: url("images/main_page.webp") center/cover no-repeat fixed;
   background-color: #111;
   color: white;
   position: relative;
@@ -145,4 +145,3 @@ footer {
   margin-top: 30px;
 }
 .socials a { color: #FFD700; margin: 0 10px; text-decoration: none; }
-

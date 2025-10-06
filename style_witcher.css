@@ -18,10 +18,11 @@ body {
     padding: 0;
     height: 100vh;
 
-    background-image: url("images/main_page.webp");
+    background-image: url("images/background_the_witcher3.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+
 
     color: white; 
     font-family: "NDAstroneer", sans-serif;
@@ -56,11 +57,13 @@ body {
 .game-info p {
     font-size: 16px;
     line-height: 1.5;
+    color: white;
 }
 
 .game-info ul {
     list-style: none;
     padding: 0;
+    color: white;
 }
 
 .game-info li {

@@ -164,6 +164,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 380px;
+  
 }
 
 .game-box:hover {
@@ -188,6 +189,9 @@ main {
   font-size: 18px;
   color: #FFD700;
   margin: 0 0 8px;
+}
+.game-info a{
+  text-decoration: none;
 }
 
 .game-info p {

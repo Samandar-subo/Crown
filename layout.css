@@ -1,4 +1,4 @@
-body {
+   body {
   margin: 0;
   font-family: "NDAstroneer", sans-serif;
   background-image: url("images/main_page.webp");
@@ -305,4 +305,9 @@ footer a:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
   }
+}
+
+.game-box {
+  transition: all 0.3s ease;
+  cursor: pointer;
 }

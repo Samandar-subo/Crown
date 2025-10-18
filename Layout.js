@@ -9,9 +9,7 @@ function filterGames(genre) {
     }
   });
 }
- 
 
-// меню 
 const searchInput = document.querySelector('.search-box input');
 
 searchInput.addEventListener('input', function() {
@@ -21,5 +19,3 @@ searchInput.addEventListener('input', function() {
     card.style.display = title.includes(query) ? 'block' : 'none';
   });
 });
-
-

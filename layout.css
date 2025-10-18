@@ -304,7 +304,6 @@ footer a:hover {
   .row-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    background-color: #00aaff;
   }
 }
 

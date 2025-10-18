@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Practice Tasks</title>
+ 
+</head>
+<body>
+
+  <button onclick="task1()">1. Приветствие</button>
+  <button onclick="task2()">2. Проверка возраста</button>
+  <button onclick="task3()">3. Конвертер</button>
+  <button onclick="task4()">4. Стоимость заказа</button>
+  <button onclick="task5()">5. Купон</button>
+  <button onclick="task6()">6. Логин</button>
+  <button onclick="task7()">7. Угадай число</button>
+  <button onclick="task8()">8. Проверка пароля</button>
+
+  <script>
+    function task1() {
+      let name = prompt("Введите ваше имя:");
+      alert(`Доброе утро, ${name}!`);
+    }
+
+    function task2() {
+      let age = prompt("Введите ваш возраст:");
+      if (age >= 18) alert("Вы можете голосовать.");
+      else alert("Извините, вы ещё не можете голосовать.");
+    }
+
+    function task3() {
+      let fahrenheit = prompt("Введите температуру в Фаренгейтах:");
+      let celsius = (fahrenheit - 32) * 5 / 9;
+      alert(`Температура в Цельсиях: `+celsius);
+
+      let inches = prompt("Введите длину в дюймах:");
+      let cm = inches * 2.54;
+      alert(`Длина в сантиметрах: `+ cm);
+    }
+
+    function task4() {
+      let item1 = parseFloat(prompt("Введите цену 1-го товара:"));
+      let item2 = parseFloat(prompt("Введите цену 2-го товара:"));
+      let item3 = parseFloat(prompt("Введите цену 3-го товара:"));
+      let total = item1 + item2 + item3;
+      let finalPrice = total * 1.12;
+      alert(`Общая стоимость с налогом: ` +finalPrice);
+    }
+
+    function task5() {
+      let coupon = Math.floor(Math.random() * 9000) + 1000;
+      alert(`Ваш купон: ` + coupon);
+    }
+
+    function task6() {
+      let username = prompt("Введите имя пользователя:");
+      let password = prompt("Введите пароль:");
+      if (username === "admin" && password === "12345")
+        alert("Вход выполнен успешно!");
+      else
+        alert("Неверное имя пользователя или пароль.");
+    }
+     function task7() {
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      let guess = parseInt(prompt("Угадайте число от 1 до 100:"));
+      if (guess === randomNumber) alert("Правильно!");
+      else if (guess > randomNumber) alert("Слишком большое!");
+      else alert("Слишком маленькое!");
+    }
+
+     function task8() {
+      let password = prompt("Введите пароль:");
+      let strong = true;
+      if (password.length < 8 || password.length > 32) strong = false;
+      if (!/[!@#\$%\^&\*]/.test(password)) strong = false;
+      if (!/[0-9]/.test(password)) strong = false;
+      if (!/[A-Z]/.test(password)) strong = false;
+
+      if (strong) alert("Надёжный пароль.");
+      else alert("Слабый пароль.");
+    }
+
+
+
+  </script>
+
+</body>
+</html>

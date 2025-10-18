@@ -1,5 +1,5 @@
-// === ВХОД В АККАУНТ ===
 const loginForm = document.querySelector('form[action="Layout.html"]');
+
 
 if (loginForm) {
   loginForm.addEventListener('submit', (event) => {

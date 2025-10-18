@@ -1,4 +1,3 @@
-
 const regForm = document.querySelector('form[action="registr.html"]');
 
 if (regForm) {

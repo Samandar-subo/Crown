@@ -169,22 +169,22 @@ nav a:hover {
 
 
 .notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #3c3c3c;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  animation: fadeInOut 3s ease;
-  z-index: 9999;
-}
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #717171;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      z-index: 9999;
+      animation: fadeInOut 3s ease-in-out;
+    }
 
-@keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(-20px); }
-  10%, 90% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
-}
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(-20px); }
+      10%, 90% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-20px); }
+    }

@@ -39,14 +39,4 @@ function filterGallery(genre) {
 }
 
 
-// Кнопка "Наверх"
-const toTop = document.getElementById("toTop");
-window.onscroll = () => {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    toTop.style.display = "block";
-  } else {
-    toTop.style.display = "none";
-  }
-};
-toTop.onclick = () => { window.scrollTo({top:0, behavior:"smooth"}); };
 

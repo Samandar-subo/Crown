@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #0a0a0a;
+  color: rgb(255, 255, 255);
+  font-family: "NDAstroneer", sans-serif;
+  background-image: url("images/main_page.webp");
+  
+  background-repeat: no-repeat;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+  padding: 15px 30px;
+  border-bottom: 2px solid #FFD700;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.logo span {
+  font-size: 28px;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: #FFD700;
+}
+
+/* ===== PROFILE CONTENT ===== */
+.profile-page {
+  max-width: 1000px;
+  margin: 130px auto 50px auto;
+  background-color: rgba(20, 20, 20, 0.9);
+  border: 1px solid #FFD700;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 25px rgba(6, 215, 218, 0.15);
+}
+
+.profile-box {
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #FFD700;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+}
+
+.profile-info h2 {
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.logout-btn, .clear-history-btn {
+  background-color: #FFD700;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.logout-btn:hover, .clear-history-btn:hover {
+  background-color: #e6b800;
+}
+
+/* ===== PURCHASE HISTORY ===== */
+.purchase-history {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.purchase-history h3 , .p {
+  color: #fcd706;
+  margin-bottom: 20px;
+}
+
+.purchase-item {
+  background-color: rgba(190, 190, 190, 0.08);
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.purchase-item h4 {
+  margin: 3;
+  color: #FFD700;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid #FFD700;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+
+.purchase-item p {
+  color: #FFD700; /* Имя — жёлтое */
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+
+
+/* === Стили для имени и email === */
+.profile-info h2 {
+  color: #FFD700; /* Имя — жёлтое */
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  color: #FFD700; /* Email — жёлтый */
+  font-size: 16px;
+  margin: 0;
+}
+
+.profile-info a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+.profile-info a:hover {
+  text-decoration: underline;
+}

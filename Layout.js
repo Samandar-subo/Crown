@@ -58,7 +58,7 @@ function addToCart(gameTitle, gamePrice, gameImage) {
   const alreadyInCart = cart.some(item => item.title === gameTitle);
 
   if (alreadyInCart) {
-    showNotification(`${gameTitle} уже в корзине`, '#e67e22');
+    showNotification(`${gameTitle} уже в корзине`, '#383838ff');
     return;
   }
 
@@ -100,3 +100,5 @@ buyButtons.forEach(button => {
     addToCart(gameTitle, gamePrice, gameImage);
   });
 });
+
+

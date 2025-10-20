@@ -101,4 +101,33 @@ buyButtons.forEach(button => {
   });
 });
 
+// ===== Переключатель темы (Day / Night) =====
+const themeButton = document.getElementById('themeToggleBtn');
+const body = document.body;
+
+// Проверяем сохранённую тему
+if (localStorage.getItem('theme') === 'light') {
+  body.classList.add('light-theme');
+  themeButton.textContent = '🌙 Тёмная тема';
+}
+
+// Переключение темы с плавным переходом
+themeButton.addEventListener('click', () => {
+  body.classList.add('theme-transition');
+
+  if (body.classList.contains('light-theme')) {
+    body.classList.remove('light-theme');
+    themeButton.textContent = '☀️ Светлая тема';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    body.classList.add('light-theme');
+    themeButton.textContent = '🌙 Тёмная тема';
+    localStorage.setItem('theme', 'light');
+  }
+
+  setTimeout(() => body.classList.remove('theme-transition'), 700);
+});
+// Обработчик клика
+themeButton.addEventListener('click', toggleTheme);
+
 

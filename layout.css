@@ -20,6 +20,14 @@
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.75);
 }
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
 
 /* HEADER */
 header {
@@ -192,6 +200,7 @@ main {
 }
 .game-info a{
   text-decoration: none;
+  color: inherit;  
 }
 
 .game-info p {
@@ -200,7 +209,12 @@ main {
   margin: 0 0 10px;
   flex-grow: 1;
 }
+.game-info a:hover {
+  text-decoration: none;
+  color: #FFD700;         /* например, жёлтый при наведении */
+}
 
+/* ======= ЦЕНА и КНОПКА ======= */
 .price {
   color: #a4d007;
   font-weight: bold;
@@ -211,16 +225,20 @@ main {
   display: inline-block;
   text-align: center;
   background-color: #FFD700;
-  color: black;
-  padding: 6px 12px;
+  color: #000;
+  padding: 8px 14px;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
+  border: none;
+  font-size: 15px;
 }
 
 .buy-btn:hover {
-  background-color: #e6b800;
+  background-color: #ffcc00;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
 }
 
 /* FOOTER */
@@ -232,7 +250,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  border-top: 2px solid #FFD700;
+  border-top: 3px solid #FFD700;
   padding: 10px;
 }
 
@@ -335,4 +353,161 @@ footer a:hover {
   0% { opacity: 0; transform: translateY(-20px); }
   10%, 90% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* ===== КНОПКА ТЕМЫ ===== */
+.theme-toggle {
+  position: absolute;
+  top: 26px;
+  right: 480px;
+  z-index: 10;
+}
+
+.theme-btn {
+  background: linear-gradient(135deg, #c9a227, #f5d76e);
+  color: #111;
+  border: none;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 231, 95, 0.6);
+}
+
+/* ============================================================
+   СВЕТЛАЯ ТЕМА
+============================================================ */
+.light-theme {
+  background-color: #ffffff !important; /* Убираем полупрозрачность */
+  color: #1a1a1a;  /* Цвет текста */
+  background-image: none !important;  /* Убираем фоновое изображение */
+  background-size: cover;  /* Убираем обтягивание фона */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* ===== Header для светлой темы ===== */
+.light-theme header {
+  background-color: #ececec;
+  color: #111;
+  border-bottom: 3.3px solid #FFD700;
+}
+/* ===== Логотип для светлой темы ===== */
+.light-theme .logo span {
+  color: #000000;  /* золотисто-коричневый для контраста */
+}
+/* ===== Светлая тема: навигация ===== */
+.light-theme nav {
+  border-bottom: 3px solid #FFD700;  /* увеличиваем толщину жёлтой линии до 5px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 7px 0;
+}
+.light-theme footer {
+  background-color: #ececec;
+  color: #111;
+  border-bottom: 3.3px solid #FFD700;
+}
+/* ===== Настройки для футера ===== */
+.light-theme footer {
+  background-color: #f0f0f0;
+  color: #111;
+  border-top: 3.3px solid #FFD700;
+}
+/* Навигация */
+.light-theme .navbar-dark {
+  background-color: #d0d0d0 !important;
+}
+.light-theme .nav-link {
+  color: #333 !important;
+  font-weight: 600;
+}
+.light-theme .nav-link:hover {
+  color: #000000 !important;
+}
+
+/* Категории */
+.light-theme aside {
+  background-color: #f1f1f3;
+  border-right: 3.3px solid #FFD700;
+}
+.light-theme aside h2 {
+  color: #000000;
+}
+.light-theme aside a {
+  color: #333;
+}
+.light-theme aside a:hover {
+  color: #b48a1f;
+}
+
+/* Поисковик */
+.light-theme .search-box {
+  background-color: #fff;
+  border: 1px solid #aaa;
+}
+.light-theme .search-box input {
+  color: #000;
+}
+.light-theme .search-box button {
+  background-color: #e0e0e0;
+}
+.light-theme .search-box button img {
+  filter: brightness(0);
+}
+
+/* Карточки игр */
+.light-theme .game-box {
+  background-color: #f2f2f4;
+  color: #111;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+.light-theme .game-box:hover {
+  background-color: #e9e9ec;
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Названия и описание */
+.light-theme .game-info h2 {
+  color: #222;
+}
+.light-theme .game-info p {
+  color: #555;
+}
+
+/* Цена */
+.light-theme .price {
+  color: #5b7500;
+  font-weight: 600;
+}
+
+/* Кнопка Купить */
+.light-theme .buy-btn {
+  background-color: #111;
+  color: #fff;
+}
+.light-theme .buy-btn:hover {
+  background-color: #FFD700;
+  color: #000;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Кнопка темы */
+.light-theme .theme-btn {
+  background: linear-gradient(135deg, #14005b, #000000);
+  color: #ffffff;
+}
+.light-theme .theme-btn:hover {
+  box-shadow: 0 0 10px rgba(180, 138, 31, 0.6);
 }

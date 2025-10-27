@@ -145,3 +145,148 @@ footer {
   margin-top: 30px;
 }
 .socials a { color: #FFD700; margin: 0 10px; text-decoration: none; }
+.games-container {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.game-box {
+  width: 310px;
+  text-align: center;
+  transition: transform .3s ease;
+}
+
+.game-box:hover {
+  transform: scale(1.06);
+}
+
+.game-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+/* Стили для контейнера с играми */
+.games-container {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+
+/* Стили для карточек игр */
+.game-box {
+  width: 300px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 14px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.game-box:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 16px #ffb400aa;
+}
+
+/* Стили для изображений */
+.game-box img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background: #111;
+}
+
+/* Анимация для появления карточек */
+.game-box {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Стиль для скролл-прогресс-бара */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: #ffb400;
+  width: 0;
+  z-index: 9999;
+  transition: width 0.15s;
+}
+/* Стили для текста на изображении */
+.game-box .caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.game-box:hover .caption {
+  opacity: 1;
+}
+/* Стили для анимации увеличения картинки */
+.game-box img {
+  transition: transform 0.3s ease;
+}
+
+.game-box:hover img {
+  transform: scale(1.1);
+}
+/* Lightbox стили */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  padding: 16px;
+  transform: translateY(-50%);
+}
+
+.prev { left: 0; }
+.next { right: 0; }

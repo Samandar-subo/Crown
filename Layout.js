@@ -342,4 +342,58 @@ $(function () {
     $('#suggestions').empty().hide();  // Очищаем и скрываем подсказки
   });
 });
+// ===================== Autocomplete Suggestions =====================
+$(function () {
+  const $searchInput = $('#liveSearch');
+  const $suggestions = $('#suggestions');
 
+  $searchInput.on('keyup', function () {
+    const text = $(this).val().toLowerCase();
+    if (!text) {
+      $suggestions.empty().hide();
+      return;
+    }
+
+    const items = $('.game-box').map(function () {
+      return $(this).find('h2, h3').text();
+    }).get();
+
+    const filterList = items.filter(item => item.toLowerCase().includes(text));
+
+    $suggestions.empty().show();
+    filterList.forEach(item => {
+      $suggestions.append(`<li class="suggest-item">${item}</li>`);
+    });
+  });
+
+  $(document).on('click', '.suggest-item', function () {
+    $searchInput.val($(this).text());
+    $suggestions.empty().hide();
+  });
+});
+// ===================== Scroll Progress Bar =====================
+$(window).on('scroll', function () {
+  const scrollTop = $(window).scrollTop();
+  const docHeight = $(document).height() - $(window).height();
+  const progress = (scrollTop / docHeight) * 100;
+  $('#scrollProgress').css('width', progress + '%');
+});
+// ===================== Counter Animation =====================
+$(document).ready(function () {
+  $('.counter').each(function () {
+    const $this = $(this);
+    const countTo = parseInt($this.attr('data-count'));
+    $({ value: 0 }).animate({
+      value: countTo
+    }, {
+      duration: 1800,
+      easing: 'swing',
+      step: function () {
+        $this.text(Math.floor(this.value));
+      },
+      complete: function () {
+        $this.text(countTo);
+      }
+    });
+  });
+});

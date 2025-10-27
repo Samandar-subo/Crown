@@ -645,4 +645,34 @@ mark.hl{
 #suggestions .suggest-item:hover {
   background: rgba(255, 255, 255, 0.08);
 }
+#suggestions {
+  position: absolute;
+  top: 100%;
+  width: 200px;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  z-index: 50;
+}
+
+.suggest-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggest-item:hover {
+  background: #ddd;
+}
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: #ffb400;
+  width: 0;
+  z-index: 9999;
+  transition: width 0.15s;
+}
 

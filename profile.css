@@ -6,8 +6,7 @@ body {
   color: rgb(255, 255, 255);
   font-family: "NDAstroneer", sans-serif;
   background-image: url("images/main_page.webp");
-  
-  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* ===== HEADER ===== */
@@ -141,6 +140,9 @@ footer {
   color: white;
   text-align: center;
   padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 

@@ -511,3 +511,168 @@ footer a:hover {
 .light-theme .theme-btn:hover {
   box-shadow: 0 0 10px rgba(180, 138, 31, 0.6);
 }
+/* ===== jQuery Enhancements — ADD-ONLY ===== */
+
+#progressBar{
+  position: fixed; top:0; left:0; height:5px; width:0%;
+  background: linear-gradient(90deg, #7F00FF, #E100FF);
+  z-index: 9999;
+}
+
+/* Подсказки под поиском */
+#suggestions{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100% + 4px);
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 0;
+  min-width: 220px;
+  max-width: 260px;
+  display: none;
+  z-index: 1000;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+#suggestions .suggest-item{
+  padding: 8px 12px;
+  cursor: pointer;
+}
+#suggestions .suggest-item:hover,
+#suggestions .suggest-item:focus{
+  background: rgba(255,255,255,0.08);
+  outline: none;
+}
+
+/* Подсветка */
+mark.hl{
+  background: #ffe066;
+  color: #111;
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+/* Toast */
+#toast-container{
+  position: fixed; right: 16px; bottom: 16px;
+  display: flex; flex-direction: column; gap: 10px; z-index: 10000;
+}
+.toast-item{
+  display: none;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Кнопка Highlight (если нет своих стилей) */
+.highlight-btn{
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none; border-radius: 6px;
+  background: #FFD700; color: #404040; font-weight: 700;
+  text-decoration: #000000;
+  cursor: pointer; transition: transform .2s, box-shadow .2s;
+  -webkit-text-stroke: 0.8px black; /* толщина и цвет обводки */
+  color: #404040;
+  background: #111;
+  font-weight: 700;
+}
+.highlight-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255,215,0,.35);
+}
+
+/* Lazy fade-in (добавит плавность появлению картинок) */
+#lazy-gallery img, img.lazy{
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+#lazy-gallery img.loaded, img.lazy.loaded{
+  opacity: 1; transform: none;
+}
+#suggestions {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* добавь эту строку */
+}
+.toast-item {
+  transition: opacity 0.3s ease;
+}
+.highlight-btn.active{
+  background:#ffed4a;
+  box-shadow:0 0 0 2px rgba(255,215,0,.35) inset;
+}
+.highlight-btn:hover {
+  transform: translateY(-1px);
+  background: #ffea00;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, .5);
+}
+#suggestions {
+  z-index: 2000; /* раньше было 1000 */
+}
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(90deg, #7F00FF, #E100FF);
+  z-index: 9999;
+}
+/* Стиль для подсказок */
+#suggestions {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100% + 4px);
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 6px 0;
+  min-width: 220px;
+  max-width: 260px;
+  display: none; /* Изначально скрыто */
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#suggestions .suggest-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#suggestions .suggest-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+#suggestions {
+  position: absolute;
+  top: 100%;
+  width: 200px;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  z-index: 50;
+}
+
+.suggest-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggest-item:hover {
+  background: #ddd;
+}
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: #ffb400;
+  width: 0;
+  z-index: 9999;
+  transition: width 0.15s;
+}
+

@@ -15,7 +15,7 @@ if (regForm) {
       alert(" Пожалуйста, заполните все поля!");
       return;
     }
-
+    
     if (password !== repeatPassword) {
       alert(" Пароли не совпадают!");
       return;

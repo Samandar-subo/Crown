@@ -149,6 +149,13 @@ nav a.active {
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
 }
 
+.purchase-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
 .clear-history-btn {
   background-color: #FFD700;
   color: black;
@@ -239,3 +246,64 @@ footer {
 }
 
 
+
+
+/* Стили для покупок в профиле */
+.purchase-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+/* При наведении — эффект */
+.purchase-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+}
+
+/* Стиль для изображения игры */
+.purchase-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* Стиль для названия игры */
+.purchase-item h4 {
+  font-size: 18px;
+  color: #FFD700; /* Золотой цвет */
+  margin-bottom: 5px;
+}
+
+/* Стиль для цены */
+.purchase-item p {
+  font-size: 16px;
+  color: #ffef9a; /* Светлый цвет для текста */
+  margin-bottom: 0;
+}
+
+/* Стили для кнопки очистки истории покупок */
+.clear-history-btn {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+  transition: 0.3s;
+}
+
+.clear-history-btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}

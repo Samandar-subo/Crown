@@ -40,38 +40,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
   const checkoutButton = document.getElementById('checkout-btn');
+  
+  // Загрузка товаров из корзины
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartContainer = document.getElementById('cart-items');
+  
+  if (cartItems.length === 0) {
+    cartContainer.innerHTML = "<p>Корзина пуста.</p>";
+  } else {
+    cartItems.forEach(item => {
+      const cartItemDiv = document.createElement('div');
+      cartItemDiv.classList.add('cart-item');
+      cartItemDiv.innerHTML = `
+        <img src="${item.image}" alt="${item.title}" />
+        <div class="cart-item-info">
+          <h3>${item.title}</h3>
+          <p>Цена: ${item.price}</p>
+        </div>
+      `;
+      cartContainer.appendChild(cartItemDiv);
+    });
+  }
 
+  // Обработчик для кнопки оформления заказа
   checkoutButton.addEventListener('click', function () {
-    // Получаем данные о корзине
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-
     if (cartItems.length === 0) {
-      // Если корзина пуста, показываем уведомление
-      showNotification('Корзина пуста. Добавьте товары в корзину для оформления заказа.', '#ff4444');
-    } else {
-      // Если в корзине есть товары, отображаем сообщение об успешном заказе
-      showNotification('Ваши игры успешно куплены и добавлены в ваш профиль!', '#383838ff');
-      
-      // Очищаем корзину после оформления заказа
+      alert("Корзина пуста. Добавьте товары в корзину.");
+      return;
+    }
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+      let profile = JSON.parse(localStorage.getItem('profile')) || {};
+      profile.purchaseHistory = profile.purchaseHistory || [];
+
+      // Переносим товары из корзины в историю покупок профиля
+      profile.purchaseHistory.push(...cartItems);
+
+      // Сохраняем обновленный профиль в localStorage
+      localStorage.setItem('profile', JSON.stringify(profile));
+
+      // Очищаем корзину
       localStorage.removeItem('cart');
+
+      alert("Ваши игры успешно куплены и добавлены в ваш профиль!");
+      window.location.href = "profile.html"; // Перенаправляем в профиль
+    } else {
+      alert("Для оформления заказа нужно войти в аккаунт.");
+      window.location.href = "login.html"; // Перенаправляем на страницу входа
     }
   });
-
-  // Функция для показа уведомлений
-  function showNotification(message, bgColor) {
-    const notification = document.createElement('div');
-    notification.textContent = message;
-    notification.style.backgroundColor = bgColor;
-    notification.classList.add('notification');
-    document.body.appendChild(notification);
-
-    // Убираем уведомление через 3 секунды
-    setTimeout(() => {
-      notification.remove();
-    }, 3000);
-  }
 });

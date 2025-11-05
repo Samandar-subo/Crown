@@ -397,3 +397,100 @@ $(document).ready(function () {
     });
   });
 });
+
+
+
+
+
+
+
+// ===================== SEARCH HISTORY =====================
+$(function () {
+  const KEY = 'searchHistory';
+  const $input = $('#liveSearch');
+  const $history = $('#searchHistory');
+  const $btn = $('#searchBtn');
+
+  // 1. читаем историю
+  function getHistory() {
+    return JSON.parse(localStorage.getItem(KEY)) || [];
+  }
+
+  // 2. сохраняем запрос
+  function saveToHistory(q) {
+    q = q.trim();
+    if (!q) return;
+    let arr = getHistory();
+
+    // убираем дубликат
+    arr = arr.filter(item => item !== q);
+    // добавляем в начало
+    arr.unshift(q);
+    // максимум 6
+    if (arr.length > 6) arr.pop();
+
+    localStorage.setItem(KEY, JSON.stringify(arr));
+  }
+
+  // 3. показываем список
+  function renderHistory() {
+    const arr = getHistory();
+    // если пусто — покажем "история пуста", чтобы ты видел, что оно РИСУЕТСЯ
+    if (arr.length === 0) {
+      $history.html('<div class="history-item" style="opacity:.6;">История пуста</div>').show();
+      return;
+    }
+
+    let html = '';
+    arr.forEach(item => {
+      html += `<div class="history-item">${item}</div>`;
+    });
+    html += `<div class="clear-history">Очистить историю ✖</div>`;
+    $history.html(html).show();
+  }
+
+  // 4. показать при фокусе
+  $input.on('focus', function () {
+    renderHistory();
+  });
+
+  // 5. скрыть при потере фокуса (чуть позже, чтобы можно было кликнуть)
+  $input.on('blur', function () {
+    setTimeout(() => $history.hide(), 150);
+  });
+
+  // 6. при клике на элемент истории — вставляем в инпут
+  $(document).on('click', '.history-item', function () {
+    const text = $(this).text();
+    if (text === 'История пуста') return;
+    $input.val(text).trigger('input');
+    $history.hide();
+  });
+
+  // 7. очистка
+  $(document).on('click', '.clear-history', function () {
+    localStorage.removeItem(KEY);
+    $history.hide();
+  });
+
+  // 8. сохраняем при клике на кнопку поиска
+  if ($btn.length) {
+    $btn.on('click', function () {
+      const q = $input.val();
+      saveToHistory(q);
+    });
+  }
+
+  // 9. сохраняем при Enter
+  $input.on('keypress', function (e) {
+    if (e.which === 13) {
+      const q = $input.val();
+      saveToHistory(q);
+    }
+  });
+
+  // 10. для отладки — покажем в консоли
+  console.log('Search history loaded:', getHistory());
+});
+
+

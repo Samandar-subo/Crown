@@ -1,4 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 // Lightbox
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
@@ -38,13 +37,15 @@ function filterGallery(genre) {
     }
   });
 }
-// Lazy Load для картинок
-$(window).on('scroll load', function () {
-  $('img.lazy').each(function () {
-    if ($(this).offset().top < $(window).scrollTop() + $(window).height() + 50) {
-      $(this).attr('src', $(this).data('src')).removeClass('lazy');
-    }
-  });
-});
 
 
+// Кнопка "Наверх"
+const toTop = document.getElementById("toTop");
+window.onscroll = () => {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    toTop.style.display = "block";
+  } else {
+    toTop.style.display = "none";
+  }
+};
+toTop.onclick = () => { window.scrollTo({top:0, behavior:"smooth"}); };

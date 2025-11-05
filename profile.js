@@ -40,3 +40,55 @@ document.querySelector(".logout-btn").addEventListener("click", () => {
   alert("Вы вышли из аккаунта.");
   window.location.href = "registr.html";
 });
+
+
+
+
+
+
+// ======== Редактирование профиля (имя, email, пароль + обновление в users) ========
+const editBtn = document.querySelector(".edit-profile-btn");
+
+if (editBtn) {
+  editBtn.addEventListener("click", () => {
+    let currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // 1️⃣ Проверяем старый пароль
+    const oldPassword = prompt("Введите текущий пароль:");
+    if (oldPassword !== currentUser.password) {
+      alert("❌ Неверный текущий пароль!");
+      return;
+    }
+
+    // 2️⃣ Запрашиваем новые данные
+    const newName = prompt("Введите новое имя:", currentUser.username || "Игрок");
+    const newEmail = prompt("Введите новый email:", currentUser.email || "example@mail.com");
+    const newPassword = prompt("Введите новый пароль:", currentUser.password || "");
+
+    if (newName && newEmail && newPassword) {
+      // 3️⃣ Обновляем currentUser
+      currentUser = { ...currentUser, username: newName, email: newEmail, password: newPassword };
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+      // 4️⃣ Обновляем данные в массиве users
+      const updatedUsers = users.map(user => {
+        if (user.email === currentUser.email || user.username === currentUser.username) {
+          return currentUser; // заменяем старую запись новым объектом
+        }
+        return user;
+      });
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+      // 5️⃣ Обновляем интерфейс
+      document.getElementById("username").textContent = `Имя: ${newName}`;
+      document.getElementById("email").textContent = `Email: ${newEmail}`;
+
+      alert("✅ Профиль и пароль успешно обновлены!");
+    } else {
+      alert("⚠️ Изменения отменены.");
+    }
+  });
+}
+
+

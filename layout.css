@@ -676,3 +676,43 @@ mark.hl{
   transition: width 0.15s;
 }
 
+
+
+.search-history {
+  display: none;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 250px;
+  background: #2b2b2f;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.history-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #3a3a3a;
+  font-size: 15px;
+}
+
+.history-item:hover {
+  background-color: #3c3c42;
+}
+
+.clear-history {
+  text-align: center;
+  padding: 6px;
+  font-size: 13px;
+  color: #ffb400;
+  background: #1f1f1f;
+  cursor: pointer;
+}
+.clear-history:hover {
+  background: #272727;
+  color: #fff;
+}
+

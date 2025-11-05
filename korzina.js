@@ -1,102 +1,77 @@
-    const cartContainer = document.getElementById("cart-container");
-    const checkoutBtn = document.getElementById("checkout-btn");
+document.addEventListener('DOMContentLoaded', function () {
+  // Загружаем корзину из localStorage
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartContainer = document.getElementById('cart-items');
 
-    // Загружаем корзину из localStorage
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    function renderCart() {
-      cartContainer.innerHTML = "";
-      if (cart.length === 0) {
-        cartContainer.innerHTML = "<p class='empty'>Ваша корзина пуста.</p>";
-        return;
-      }
-
-      cart.forEach((item, index) => {
-        const div = document.createElement("div");
-        div.classList.add("cart-item");
-        div.innerHTML = `
-          <img src="${item.image}" alt="${item.title}">
-          <div>
-            <h3>${item.title}</h3>
-            <p>${item.price}</p>
-          </div>
-          <button onclick="removeFromCart(${index})">Удалить</button>
-        `;
-        cartContainer.appendChild(div);
-      });
-    }
-
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      renderCart();
-    }
-
-    checkoutBtn.addEventListener("click", () => {
-      if (cart.length === 0) {
-        alert("Ваша корзина пуста!");
-      } else {
-        alert("Спасибо за покупку! 🎉");
-        localStorage.removeItem("cart");
-        renderCart();
-      }
-    });
-
-    renderCart();
-
-
-
-    
-// ======== Оформление покупки ========
-const buyButton = document.getElementById("buyBtn");
-
-if (buyButton) {
-  buyButton.addEventListener("click", () => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    if (!currentUser) {
-      alert("Сначала войдите в аккаунт!");
-      window.location.href = "registr.html";
-      return;
-    }
-
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    if (cartItems.length === 0) {
-      alert("Корзина пуста!");
-      return;
-    }
-
-    // создаём уникальный ключ для истории конкретного пользователя
-    const key = `purchaseHistory_${currentUser.email}`;
-    const purchaseHistory = JSON.parse(localStorage.getItem(key)) || [];
-
-    // переносим товары из корзины в историю
-    cartItems.forEach(item => {
-      purchaseHistory.push({
-        title: item.title || item.name || "Без названия",
-        price: item.price || "0₸",
-        date: new Date().toLocaleString()
-      });
-    });
-
-    // сохраняем и очищаем корзину
-    localStorage.setItem(key, JSON.stringify(purchaseHistory));
-    localStorage.removeItem("cart");
-
-    alert("✅ Покупка успешно оформлена!");
-    window.location.href = "profile.html";
-  });
-} else {
-  console.warn("❗ Кнопка 'Купить' не найдена. Проверь id в HTML!");
-}
-
-
-
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
-  if (window.scrollY > 30) {
-    header.classList.add("scrolled");
+  // Если корзина пуста
+  if (cartItems.length === 0) {
+    cartContainer.innerHTML = '<p>Ваша корзина пуста.</p>';
   } else {
-    header.classList.remove("scrolled");
+    // Отображаем каждый товар из корзины
+    cartItems.forEach(item => {
+      const cartItemDiv = document.createElement('div');
+      cartItemDiv.classList.add('cart-item');
+      cartItemDiv.innerHTML = `
+        <img src="${item.image}" alt="${item.title}">
+        <div class="cart-item-info">
+          <h3>${item.title}</h3>
+          <p>Цена: ${item.price}</p>
+        </div>
+        <button class="remove-btn" data-title="${item.title}">Удалить</button>
+      `;
+      cartContainer.appendChild(cartItemDiv);
+    });
   }
+
+  // Удаление товара из корзины
+  const removeButtons = document.querySelectorAll('.remove-btn');
+  removeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const titleToRemove = this.getAttribute('data-title');
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.title !== titleToRemove);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+    });
+  });
 });
 
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const checkoutButton = document.getElementById('checkout-btn');
+
+  checkoutButton.addEventListener('click', function () {
+    // Получаем данные о корзине
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cartItems.length === 0) {
+      // Если корзина пуста, показываем уведомление
+      showNotification('Корзина пуста. Добавьте товары в корзину для оформления заказа.', '#ff4444');
+    } else {
+      // Если в корзине есть товары, отображаем сообщение об успешном заказе
+      showNotification('Ваши игры успешно куплены и добавлены в ваш профиль!', '#383838ff');
+      
+      // Очищаем корзину после оформления заказа
+      localStorage.removeItem('cart');
+    }
+  });
+
+  // Функция для показа уведомлений
+  function showNotification(message, bgColor) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.style.backgroundColor = bgColor;
+    notification.classList.add('notification');
+    document.body.appendChild(notification);
+
+    // Убираем уведомление через 3 секунды
+    setTimeout(() => {
+      notification.remove();
+    }, 3000);
+  }
+});

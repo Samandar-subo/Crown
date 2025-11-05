@@ -51,24 +51,56 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-const buyButton = document.querySelector(".buy-btn");
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const buyButton = document.querySelector('.buy-btn');
 
-buyButton.addEventListener("click", function(event) {
-  event.preventDefault();
+    buyButton.addEventListener('click', function(event) {
+        event.preventDefault();
 
-  // Создаём уведомление
-  const notification = document.createElement("div");
-  notification.textContent = " Игра Battlefield V добавлена в корзину!";
-  notification.classList.add("notification");
+        // Получаем информацию о текущей игре
+        const gameTitle = document.querySelector('h1').textContent; // Название игры
+        const gamePrice = document.querySelector('.buy-btn').textContent.split(' ')[2]; // Цена
+        const gameImage = document.querySelector('img').src; // Изображение игры
 
-  // Добавляем уведомление на страницу
-  document.body.appendChild(notification);
+        // Добавляем игру в корзину
+        addToCart(gameTitle, gamePrice, gameImage);
+    });
 
-  setTimeout(() => {
-    notification.remove();
-  }, 3000);
+    // Функция для добавления игры в корзину
+    function addToCart(gameTitle, gamePrice, gameImage) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Загружаем корзину из localStorage
+
+        // Проверяем, не добавлена ли уже эта игра
+        const alreadyInCart = cart.some(item => item.title === gameTitle);
+        if (alreadyInCart) {
+            showNotification(`${gameTitle} уже в корзине!`, '#e6b800');
+            return;
+        }
+
+        // Добавляем игру в корзину
+        cart.push({ title: gameTitle, price: gamePrice, image: gameImage });
+        localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем корзину в localStorage
+
+        // Показываем уведомление
+        showNotification(`${gameTitle} добавлена в корзину!`, '#383838ff');
+    }
+
+    // Функция для показа уведомлений
+    function showNotification(message, bgColor) {
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.style.backgroundColor = bgColor;
+        notification.classList.add('notification');
+        document.body.appendChild(notification);
+
+        // Убираем уведомление через 3 секунды
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
 });
+
 </script>
 <script src="sound.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

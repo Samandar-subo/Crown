@@ -104,7 +104,60 @@ $(document).ready(function () {
   });
 });
 
+$(window).on('scroll', function () {
+  const scrollTop = $(window).scrollTop();
+  const docHeight = $(document).height() - $(window).height();
+  const progress = (scrollTop / docHeight) * 100;
+  $('#scrollProgress').css('width', progress + '%');
+});
 
+$(window).on('scroll', function () {
+  const scrollTop = $(window).scrollTop();
+  const docHeight = $(document).height() - $(window).height();
+  const progress = (scrollTop / docHeight) * 100;
+  $('#progressBar').css('width', progress + '%');
+});
+// === Highlight: toggle-режим с автообновлением при вводе ===
+$(function () {
+  let highlightOn = false; // состояние режима
+
+  function clearHighlight() {
+    $('mark.hl').each(function () {
+      $(this).replaceWith($(this).text());
+    });
+  }
+
+  function doHighlight(term) {
+    clearHighlight();
+    if (!term) return;
+    const re = new RegExp('(' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    $('.game-box h2, .game-box p').each(function () {
+      $(this).html($(this).text().replace(re, '<mark class="hl">$1</mark>'));
+    });
+  }
+
+  // Включение/выключение режима по кнопке
+  $('#highlightBtn').on('click', function () {
+    highlightOn = !highlightOn;
+    $(this).toggleClass('active', highlightOn)
+           .text(highlightOn ? 'Highlight' : 'Highlight');
+    if (!highlightOn) {
+      clearHighlight();            // выключили — убрали подсветку
+    } else {
+      doHighlight($('#liveSearch').val().trim()); // включили — подсветили текущее
+    }
+  });
+
+  // При наборе в поиске — обновляем подсветку только если режим включен
+  $('#liveSearch').on('input', function () {
+    const term = $(this).val().trim();
+    if (highlightOn) {
+      doHighlight(term);
+    } else if (!term) {
+      clearHighlight(); // на всякий случай чистим, когда строка пустая
+    }
+  });
+});
 
 
 

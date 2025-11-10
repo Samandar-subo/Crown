@@ -290,3 +290,33 @@ footer {
 
 .prev { left: 0; }
 .next { right: 0; }
+
+/* Для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+
+  /* Уменьшаем шрифт и padding для мобильных */
+  nav a {
+    font-size: 16px;
+    
+  }
+
+  .level-circle {
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .theme-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stats h4 {
+    font-size: 16px;
+  }
+  /* Уменьшаем ширину панели навигации */
+.navbar-collapse {
+  width: 30px;  /* Уменьшаем ширину панели */
+  
+}
+}

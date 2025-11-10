@@ -23,8 +23,10 @@ header {
 
 .logo {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: center;  /* Центрируем по вертикали */
+  justify-content: flex-start; /* Выравниваем логотип слева */
+  gap: 10px; /* Расстояние между изображением и текстом */
+  width: auto;
 }
 
 .logo img {
@@ -37,6 +39,12 @@ header {
   font-size: 26px;
   color: #FFD700;
   font-weight: bold;
+}
+.logo a {
+  display: flex; /* Ссылка должна вести себя как блок, не меняя положение */
+  align-items: center;  /* Центрируем логотип внутри ссылки */
+  justify-content: center; /* Содержимое по центру */
+  text-decoration: none; /* Убираем подчеркивание ссылки */
 }
 
 nav ul {
@@ -306,4 +314,211 @@ footer {
 .clear-history-btn:hover {
   background-color: #e6b800;
   transform: scale(1.05);
+}
+
+nav {
+  position: fixed;
+  background-color: #222; /* Тёмный фон для Navbar */
+  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+  padding: 15px 0; /* Отступы сверху и снизу */
+  
+}
+
+nav .navbar-toggler {
+  background-color: #FFD700; /* Цвет гамбургер-меню */
+}
+nav .navbar-toggler-icon {
+  background-color: #222; /* Цвет иконки гамбургера */
+}
+
+nav ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+nav ul li a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 16px; 
+  transition: all 0.3s ease; 
+}
+
+/* Для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 120px auto 80px;
+  }
+
+  .profile-left, .profile-right {
+    flex: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .profile-left {
+    padding: 15px;
+  }
+
+  .purchase-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .purchase-item img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .theme-toggle {
+    margin-top: 30px;
+    align-self: center;
+  }
+
+  /* Уменьшаем шрифт и padding для мобильных */
+  nav a {
+    font-size: 16px;
+  }
+
+  .level-circle {
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .theme-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stats h4 {
+    font-size: 16px;
+  }
+  
+}
+
+/* Для планшетов (с 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .profile-left, .profile-right {
+    width: 100%;
+  }
+
+  .profile-left {
+    padding: 20px;
+  }
+
+  .theme-btn {
+    font-size: 13px;
+  }
+
+  .theme-toggle {
+    margin-top: 25px;
+  }
+  
+}
+
+/* ===== Кнопка смены темы ===== */
+.theme-toggle {
+  margin-top: 20px;  /* Отступ сверху */
+  align-self: center;
+  z-index: 10;
+}
+
+/* Стили для кнопки смены темы */
+.theme-btn {
+  background: linear-gradient(135deg, #c9a227, #f5d76e);
+  color: #111;
+  border: none;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 231, 95, 0.6);
+}
+
+/* ============================================================
+   СВЕТЛАЯ ТЕМА
+============================================================ */
+.light-theme {
+  background-color: #ffffff !important; /* Убираем полупрозрачность */
+  color: #1a1a1a;  /* Цвет текста */
+  background-image: none !important;  /* Убираем фоновое изображение */
+  background-size: cover;  /* Убираем обтягивание фона */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* ===== Header для светлой темы ===== */
+.light-theme header {
+  background-color: #ececec;
+  color: #111;
+  border-bottom: 3.3px solid #FFD700;
+}
+/* ===== Логотип для светлой темы ===== */
+.light-theme .logo span {
+  color: #000000;  /* золотисто-коричневый для контраста */
+}
+/* ===== Светлая тема: навигация ===== */
+.light-theme nav {
+  border-bottom: 3px solid #FFD700;  /* увеличиваем толщину жёлтой линии до 5px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 7px 0;
+}
+.light-theme footer {
+  background-color: #ececec;
+  color: #111;
+  border-bottom: 3.3px solid #FFD700;
+}
+/* ===== Настройки для футера ===== */
+.light-theme footer {
+  background-color: #f0f0f0;
+  color: #111;
+  border-top: 3.3px solid #FFD700;
+}
+/* Навигация */
+.light-theme .navbar-dark {
+  background-color: #d0d0d0 !important;
+}
+.light-theme .nav-link {
+  color: #333 !important;
+  font-weight: 600;
+}
+.light-theme .nav-link:hover {
+  color: #000000 !important;
+}
+
+/* Кнопка темы */
+.light-theme .theme-btn {
+  background: linear-gradient(135deg, #14005b, #000000);
+  color: #ffffff;
+}
+.light-theme .theme-btn:hover {
+  box-shadow: 0 0 10px rgba(180, 138, 31, 0.6);
 }

@@ -46,28 +46,7 @@ header.scrolled {
 
 }
 
-/* ===== RESPONSIVE HEADER ===== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 15px 20px;
-  }
 
-  .logo span {
-    font-size: 22px;
-  }
-
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  nav ul li a {
-    font-size: 15px;
-  }
-}
 
 /* ===== BODY OFFSET ===== */
 body {
@@ -77,6 +56,14 @@ body {
   background-color: #0b0b0b;
   color: white;
   font-family: "NDAstroneer", sans-serif;
+}
+nav {
+  position: fixed;
+  background-color: #222; /* Тёмный фон для Navbar */
+  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+  padding: 15px 0; /* Отступы сверху и снизу */
+  
 }
 
 /* ===== CART SECTION ===== */
@@ -116,21 +103,34 @@ body {
   box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
 }
 
-/* Адаптация для мобильных устройств */
+/* Для мобильных устройств (до 768px) */
 @media (max-width: 768px) {
-  .cart-container {
-    margin: 150px 20px;
-    padding: 15px 10px;
-  }
 
-  .cart-container h1 {
-    font-size: 22px;
-  }
-
-  .checkout-btn {
+  /* Уменьшаем шрифт и padding для мобильных */
+  nav a {
     font-size: 16px;
-    padding: 10px 20px;
+    
   }
+
+  .level-circle {
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .theme-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stats h4 {
+    font-size: 16px;
+  }
+  /* Уменьшаем ширину панели навигации */
+.navbar-collapse {
+  width: 30px;  /* Уменьшаем ширину панели */
+  
+}
 }
 
 /* Адаптация для планшетов */
@@ -184,14 +184,6 @@ body {
     height: 60px;
   }
 }
-
-
-
-
-
-
-
-
 /* Изменяем позиционирование кнопки гамбургера */
  nav .navbar-toggler {
   background-color: #FFD700; /* Желтый фон для кнопки гамбургера */

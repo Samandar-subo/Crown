@@ -139,3 +139,17 @@ themeButton.addEventListener('click', () => {
 });
 // Обработчик клика
 themeButton.addEventListener('click', toggleTheme);
+
+
+
+
+
+
+
+// ===================== Scroll Progress Bar =====================
+$(window).on('scroll', function () {
+  const scrollTop = $(window).scrollTop();
+  const docHeight = $(document).height() - $(window).height();
+  const progress = (scrollTop / docHeight) * 100;
+  $('#scrollProgress').css('width', progress + '%');
+});

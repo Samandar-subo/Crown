@@ -611,15 +611,7 @@ mark.hl{
 #suggestions {
   z-index: 2000; /* раньше было 1000 */
 }
-#progressBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  width: 0%;
-  background: linear-gradient(90deg, #7F00FF, #E100FF);
-  z-index: 9999;
-}
+
 /* Стиль для подсказок */
 #suggestions {
   position: absolute;
@@ -675,6 +667,15 @@ mark.hl{
   z-index: 9999;
   transition: width 0.15s;
 }
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(90deg, #7F00FF, #E100FF);
+  z-index: 9999;
+}
 
 
 
@@ -715,4 +716,3 @@ mark.hl{
   background: #272727;
   color: #fff;
 }
-

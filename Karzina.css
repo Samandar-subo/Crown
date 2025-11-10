@@ -27,6 +27,7 @@ header.scrolled {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 5px;
 }
 
 .logo img {
@@ -42,122 +43,19 @@ header.scrolled {
   font-weight: bold;
   color: #FFD700;
   letter-spacing: 1px;
+
 }
 
-/* ===== SEARCH BOX ===== */
-.search-box {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  border-radius: 8px;
-  margin: 0 40px;
-  overflow: hidden;
-  max-width: 450px;
-  transition: all 0.3s ease;
-}
-
-.search-box input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 8px 12px;
-  color: #fff;
-  font-size: 15px;
-}
-
-.search-box input::placeholder {
-  color: #bbb;
-}
-
-.search-box button {
-  background-color: #FFD700;
-  border: none;
-  padding: 8px 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.search-box button:hover {
-  background-color: #e6b800;
-}
-
-.search-box button img {
-  width: 18px;
-  height: 18px;
-  filter: brightness(0);
-}
-
-/* ===== NAVIGATION MENU ===== */
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 17px;
-  text-transform: uppercase;
-  position: relative;
-  transition: 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: #FFD700;
-}
-
-/* Анимация подсветки под пунктом */
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background-color: #FFD700;
-  transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after,
-nav ul li a.active::after {
-  width: 100%;
-}
-
-/* ===== BODY OFFSET ===== */
-body {
-  margin: 0;
-  padding-top: 90px; /* чтобы контент не прятался под шапку */
-  background: url("images/main_page.webp") center/cover no-repeat fixed;
-  background-color: #0b0b0b;
-  color: white;
-  font-family: "NDAstroneer", sans-serif;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
+/* ===== RESPONSIVE HEADER ===== */
+@media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: stretch;
     padding: 15px 20px;
   }
 
-  .search-box {
-    margin: 15px 0;
-    width: 100%;
-    max-width: 100%;
+  .logo span {
+    font-size: 22px;
   }
 
   nav ul {
@@ -171,207 +69,80 @@ body {
   }
 }
 
-
-
-
-/* ===== CART SECTION (старый стиль, улучшенный) ===== */
-.cart-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
+/* ===== BODY OFFSET ===== */
+body {
+  margin: 0;
+  padding-top: 90px;
+  background: url("images/main_page.webp") center/cover no-repeat fixed;
+  background-color: #0b0b0b;
+  color: white;
+  font-family: "NDAstroneer", sans-serif;
 }
 
-/* Сам бокс корзины */
-.cart-box {
-  background-color: rgba(20, 20, 20, 0.92);
-  border: 2px solid #FFD700;
-  border-radius: 15px;
-  padding: 40px 60px;
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
-  text-align: center;
-  max-width: 800px;
+/* ===== CART SECTION ===== */
+.cart-container {
+  margin: 50px auto;
+  padding: 20px;
   width: 90%;
-  transition: 0.3s ease;
+  max-width: 1200px;
+  background-color: rgba(20, 20, 20, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
-.cart-box:hover {
-  box-shadow: 0 0 35px rgba(255, 215, 0, 0.25);
-}
-
-/* Заголовок */
-.cart-box h1 {
+.cart-container h1 {
   color: #FFD700;
-  font-size: 28px;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-.cart-box h1::before {
-  content: "🛒";
-  font-size: 28px;
-}
-
-/* Текст */
-.cart-box p {
-  color: #ddd;
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-/* Кнопка */
-.cart-box button {
+.checkout-btn {
   background-color: #FFD700;
   color: #000;
-  border: none;
   padding: 12px 30px;
-  border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  text-align: center;
 }
 
-.cart-box button:hover {
+.checkout-btn:hover {
   background-color: #e6b800;
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
 }
 
-/* Для адаптивности */
+/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
-  .cart-box {
-    padding: 25px 20px;
+  .cart-container {
+    margin: 150px 20px;
+    padding: 15px 10px;
   }
 
-  .cart-box h1 {
+  .cart-container h1 {
     font-size: 22px;
   }
 
-  .cart-box button {
+  .checkout-btn {
     font-size: 16px;
     padding: 10px 20px;
   }
 }
 
-
-/* ===== FIX: Убираем вылезание за экран ===== */
-* {
-  box-sizing: border-box; /* Чтобы padding не раздвигал элементы */
+/* Адаптация для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cart-container {
+    margin: 140px auto;
+    width: 90%;
+    padding: 20px;
+  }
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* убирает горизонтальный скролл */
-}
-
-header {
-  width: 100%;
-  max-width: 100vw; /* ограничиваем ширину видимым окном */
-  overflow: hidden;
-}
-
-/* Для навигации и списков */
-nav, nav ul {
-  margin: 0;
-  padding: 0 40px ;
-  max-width: 100%;
-}
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap; /* чтобы пункты не ломали макет */
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-}
-
-nav ul li {
-  white-space: nowrap; /* чтобы пункты не переносились */
-}
-
-nav a {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 17px;
-  padding: 5px 10px;
-  transition: 0.3s;
-}
-
-
-
-/* Размеры изображений в карточках */
-.game-box img {
-  width: 100%;         /* Ширина изображения — 100% от родительского блока */
-  height: 180px;       /* Фиксированная высота изображения */
-  object-fit: cover;   /* Сохраняет пропорции и обрезает изображение */
-  border-radius: 8px;  /* Округляем углы изображений */
-  margin: 0 auto;      /* Выравниваем изображение по центру */
-  display: block;      /* Для выравнивания */
-}
-
-
-
-
-/* Стиль для кнопки "Купить" */
-.buy-btn {
-  display: inline-block;
-  text-align: center;
-  background-color: #FFD700; /* Золотой фон */
-  color: #000;               /* Черный текст */
-  padding: 8px 16px;         /* Уменьшаем размеры кнопки */
-  border-radius: 6px;        /* Округляем углы */
-  font-weight: bold;         /* Жирный шрифт */
-  text-decoration: none;
-  transition: 0.3s;
-  border: none;
-  font-size: 16px;  /* Средний шрифт */
-}
-
-.buy-btn:hover {
-  background-color: #e6b800; /* Подсветка при наведении */
-  transform: scale(1.05);     /* Легкое увеличение кнопки */
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Тень при наведении */
-}
-
-/* Стиль для кнопки "Удалить" */
-.remove-btn {
-  background-color: #FF4444; /* Красный фон */
-  color: white;              /* Белый текст */
-  padding: 6px 12px;         /* Отступы */
-  border-radius: 6px;        /* Округление углов */
-  font-weight: bold;         /* Жирный шрифт */
-  font-size: 14px;           /* Средний размер шрифта */
-  border: none;              /* Без границ */
-  cursor: pointer;           /* Курсор указатель */
-  transition: all 0.3s ease; /* Плавные переходы */
-}
-
-.remove-btn:hover {
-  background-color: #cc0000; /* Подсветка при наведении */
-  transform: scale(1.05);     /* Легкое увеличение кнопки */
-  box-shadow: 0 0 8px rgba(255, 0, 0, 0.7); /* Тень при наведении */
-}
-
-
-
-/* Контейнер корзины */
-.cart-container {
-  margin: 100px auto;
-  padding: 20px;
-  max-width: 1200px;  /* Устанавливаем максимальную ширину контейнера */
-  background-color: rgba(20, 20, 20, 0.9); /* Тёмный фон */
-  border-radius: 15px; 
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-}
-
-/* Блок с информацией о товарах в корзине */
+/* Стиль для карт товаров в корзине */
 .cart-item {
   display: flex;
   align-items: center;
@@ -397,16 +168,76 @@ nav a {
   color: #ccc;
 }
 
-.cart-item button {
-  background-color: #FFD700; /* Золотой фон */
-  color: black;               /* Черный текст */
-  padding: 6px 12px;          /* Отступы */
-  border-radius: 6px;         /* Округление углов */
-  font-weight: bold;          /* Жирный шрифт */
-  font-size: 14px;            /* Средний размер шрифта */
-  border: none;               /* Без границ */
-  cursor: pointer;            /* Курсор указатель */
-  transition: 0.3s ease;      /* Плавные переходы */
+/* Размеры изображений в корзине */
+.cart-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Изменяем позиционирование кнопки гамбургера */
+ nav .navbar-toggler {
+  background-color: #FFD700; /* Желтый фон для кнопки гамбургера */
+    
+}
+
+nav  .navbar-toggler-icon {
+  background-color: #222;
+
+}
+
+/* При добавлении класса ms-auto */
+.navbar-nav {
+  margin-left: auto;
+}
+
+
+@media (max-width: 768px) {
+  /* Размещение гамбургера справа */
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
+
+
+.navbar-toggler.ms-auto {
+  margin-left: auto;  /* Это выровняет гамбургер в правую часть */
+}
+
+/* Стиль для кнопки "Удалить" в корзине */
+.remove-btn {
+  background-color: #FFD700; /* Желтый фон для кнопки "Удалить" */
+  color: black;              /* Черный текст */
+  padding: 6px 12px;         /* Отступы */
+  border-radius: 6px;        /* Округление углов */
+  font-weight: bold;         /* Жирный шрифт */
+  font-size: 14px;           /* Размер шрифта */
+  border: none;              /* Без границ */
+  cursor: pointer;           /* Курсор указатель */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.remove-btn:hover {
+  background-color: #e6b800; /* Подсветка при наведении */
+  transform: scale(1.05);     /* Легкое увеличение кнопки */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Тень при наведении */
 }
 
 
@@ -420,21 +251,9 @@ nav a {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Тень для изображения */
 }
 
-/* Размеры изображений в карточках игр */
-.game-box img {
-  width: 100%;         /* Ширина изображения — 100% от родительского блока */
-  height: 150px;       /* Фиксированная высота изображения */
-  object-fit: cover;   /* Сохраняет пропорции и обрезает изображение */
-  border-radius: 8px;  /* Округляем углы изображений */
-  margin: 0 auto;      /* Выравниваем изображение по центру */
-  display: block;      /* Для выравнивания */
-}
-
-
-
 /* Кнопка "Оформить заказ" */
 .checkout-btn {
-  background-color: #FFD700; /* Золотой фон */
+  background-color: #FFD700; /* Желтый фон */
   color: #000;               /* Черный текст */
   padding: 12px 30px;        /* Отступы */
   font-size: 18px;           /* Размер шрифта */
@@ -454,27 +273,3 @@ nav a {
 
 
 
-
-
-
-/* Стиль для уведомлений */
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #383838ff;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  animation: fadeInOut 3s ease-in-out;
-}
-
-@keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(-20px); }
-  10%, 90% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
-}

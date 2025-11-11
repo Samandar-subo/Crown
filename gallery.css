@@ -23,9 +23,44 @@ header {
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo img { width: 40px; height: 40px; border-radius: 50%; }
 .logo span { font-size: 28px; font-weight: bold; color: #FFD700; }
-nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-nav a { text-decoration: none; color: white; font-size: 18px; transition: 0.3s; }
-nav a:hover, nav a.active { color: #FFD700; }
+nav {
+  background-color: #222; /* Тёмный фон для Navbar */
+  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+  padding: 15px 0; /* Отступы сверху и снизу */
+}
+
+nav .navbar-toggler {
+  background-color: #FFD700; /* Цвет гамбургер-меню */
+}
+nav .navbar-toggler-icon {
+  background-color: #222; /* Цвет иконки гамбургера */
+}
+
+nav ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+nav ul li a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 16px; 
+  transition: all 0.3s ease; 
+}
+
 
 .gallery-title {
   text-align: center;

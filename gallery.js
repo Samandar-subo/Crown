@@ -39,13 +39,17 @@ function filterGallery(genre) {
 }
 
 
-// Кнопка "Наверх"
+// ===== КНОПКА "НАВЕРХ" =====
 const toTop = document.getElementById("toTop");
-window.onscroll = () => {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    toTop.style.display = "block";
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    toTop.classList.add("show");
   } else {
-    toTop.style.display = "none";
+    toTop.classList.remove("show");
   }
-};
-toTop.onclick = () => { window.scrollTo({top:0, behavior:"smooth"}); };
+});
+
+toTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

@@ -43,6 +43,7 @@ body {
     color: #FFD700; /* золотой */
 }
 
+/* Навигация */
 nav {
   background-color: #222; /* Тёмный фон для Navbar */
   border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
@@ -58,6 +59,11 @@ nav .navbar-toggler-icon {
 }
 
 nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   padding-left: 0;
   list-style: none;
   display: flex;

@@ -136,17 +136,6 @@ $(function () {
     });
   }
 
-  // Включение/выключение режима по кнопке
-  $('#highlightBtn').on('click', function () {
-    highlightOn = !highlightOn;
-    $(this).toggleClass('active', highlightOn)
-           .text(highlightOn ? 'Highlight' : 'Highlight');
-    if (!highlightOn) {
-      clearHighlight();            // выключили — убрали подсветку
-    } else {
-      doHighlight($('#liveSearch').val().trim()); // включили — подсветили текущее
-    }
-  });
 
   // При наборе в поиске — обновляем подсветку только если режим включен
   $('#liveSearch').on('input', function () {
@@ -195,10 +184,6 @@ themeButton.addEventListener('click', toggleTheme);
 
 
 
-
-
-
-
 // ===================== Scroll Progress Bar =====================
 $(window).on('scroll', function () {
   const scrollTop = $(window).scrollTop();
@@ -206,3 +191,39 @@ $(window).on('scroll', function () {
   const progress = (scrollTop / docHeight) * 100;
   $('#scrollProgress').css('width', progress + '%');
 });
+
+// Получаем кнопку гамбургера и саму панель навигации
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navMenu = document.querySelector('nav');
+
+// Обработчик события для открытия/закрытия навигации
+navbarToggler.addEventListener('click', () => {
+  navMenu.classList.toggle('show');  // Переключаем класс для отображения/скрытия
+});
+// Мобильные улучшения
+$(document).ready(function() {
+  // Предотвращение масштабирования при фокусе на инпуты
+  $('input, textarea, select').on('focus', function() {
+    window.setTimeout(function() {
+      document.body.style.zoom = 1;
+    }, 100);
+  });
+  
+  // Закрытие меню при клике на ссылку (для мобильных)
+  $('.navbar-nav .nav-link').on('click', function() {
+    $('.navbar-collapse').collapse('hide');
+  });
+  
+  // Оптимизация для touch устройств
+  if ('ontouchstart' in window) {
+    $('.game-box').css('cursor', 'pointer');
+    
+    // Улучшенные touch события
+    $('.buy-btn').on('touchstart', function(e) {
+      $(this).addClass('touch-active');
+      e.preventDefault();
+    }).on('touchend', function() {
+      $(this).removeClass('touch-active');
+    });
+  }
+}); 

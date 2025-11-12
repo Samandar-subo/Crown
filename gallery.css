@@ -133,6 +133,7 @@ nav ul li a {
 /* Lightbox */
 .lightbox {
   display: none;
+  padding-top: 50px;
   position: fixed;
   z-index: 1000;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -161,17 +162,39 @@ nav ul li a {
 
 /* Кнопка "Наверх" */
 #toTop {
-  display: none;
   position: fixed;
-  bottom: 20px; right: 20px;
-  background: #FFD700;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   border: none;
-  padding: 10px 15px;
-  font-size: 20px;
+  outline: none;
+  background: rgba(255, 215, 0, 0.85);
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
   cursor: pointer;
-  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: none;
+  z-index: 1000;
 }
-#toTop:hover { background: #e6c200; }
+
+/* Эффект при наведении */
+#toTop:hover {
+  background: #ffcc00;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+/* Эффект появления */
+#toTop.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 0.4s ease;
+}
 
 footer {
   text-align: center;

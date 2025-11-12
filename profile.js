@@ -109,7 +109,7 @@ navbarToggler.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', function () {
   // Загружаем данные текущего пользователя
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  
+
   if (currentUser) {
     document.getElementById("username").textContent = `Имя: ${currentUser.username}`;
     document.getElementById("email").textContent = `Email: ${currentUser.email}`;
@@ -183,4 +183,3 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => body.classList.remove('theme-transition'), 700);
   });
 });
-

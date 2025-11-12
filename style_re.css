@@ -14,18 +14,17 @@ header {
 
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-
-    background-image: url("images/background_resident_evil_village.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
-
-    color: white; 
     font-family: "NDAstroneer", sans-serif;
+    background-image: url("images/background_assassin_valhalla.jpeg");
+    background-size: cover; /* Фон будет растягиваться по всему экрану */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex; /* Используем flexbox для размещения контента */
+    flex-direction: column; /* Вертикальное размещение элементов */
+    min-height: 100vh; /* Обеспечиваем, чтобы body занимал весь экран */
 }
+
 
 /* Основной контейнер */
 .game-page {
@@ -126,24 +125,42 @@ body {
     color: #FFD700; /* золотой */
 }
 
-/* Навигация */
+nav {
+  background-color: #222; /* Тёмный фон для Navbar */
+  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+  padding: 15px 0; /* Отступы сверху и снизу */
+}
+
+nav .navbar-toggler {
+  background-color: #FFD700; /* Цвет гамбургер-меню */
+}
+nav .navbar-toggler-icon {
+  background-color: #222; /* Цвет иконки гамбургера */
+}
+
 nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 19px;
-    transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
 }
-
-nav a:hover {
-    color: #FFD700; /* при наведении золотой */
+nav ul li a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 16px; 
+  transition: all 0.3s ease; 
 }
 
 
@@ -162,5 +179,131 @@ nav a:hover {
     }
     .logo span {
         font-size: 22px;
+    }
+}
+/* Мобильные устройства (до 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Уменьшаем шрифт для мобильных */
+    }
+
+    .game-hero {
+        flex-direction: column; /* Ставим элементы в колонку */
+        align-items: center; /* Центрируем элементы */
+        padding: 20px; /* Уменьшаем отступы */
+    }
+
+    .game-hero img {
+        width: 100%; /* Картинка на всю ширину */
+        height: auto; /* Автоматическая высота */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
+    }
+
+    .game-info h1 {
+        font-size: 24px; /* Уменьшаем размер заголовка */
+    }
+
+    .game-info p {
+        font-size: 14px; /* Уменьшаем текст */
+    }
+
+    .game-info ul li {
+        font-size: 14px; /* Уменьшаем шрифт списка */
+    }
+
+    .buy-btn {
+        padding: 12px 20px; /* Уменьшаем размер кнопки */
+        font-size: 16px;
+        width: 100%; /* Кнопка на всю ширину */
+        text-align: center;
+    }
+
+    .gallery {
+        flex-direction: column; /* Складываем картинки в один столбец */
+        align-items: center;
+    }
+
+    .gallery img {
+        width: 80%; /* Уменьшаем картинку */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+
+    nav ul {
+        flex-direction: column; /* Ставим меню вертикально */
+        padding-left: 0; /* Убираем отступы */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Отступы между элементами */
+    }
+}
+
+/* Планшеты (от 481px до 768px) */
+@media (max-width: 768px) {
+    .game-hero {
+        flex-direction: column; /* Убираем горизонтальную верстку */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .game-hero img {
+        width: 80%; /* Картинка 80% от ширины */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+
+    .game-info h1 {
+        font-size: 28px; /* Размер заголовка для планшетов */
+    }
+
+    .game-info p {
+        font-size: 16px; /* Размер текста */
+    }
+
+    .buy-btn {
+        padding: 12px 18px;
+        font-size: 16px;
+    }
+
+    .gallery {
+        flex-wrap: wrap; /* Размещение картинок в несколько строк */
+        justify-content: space-around;
+    }
+
+    .gallery img {
+        width: 45%; /* Картинки занимают 45% ширины */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+}
+
+/* Для больших экранов */
+@media (min-width: 769px) {
+    .game-hero {
+        flex-direction: row; /* Горизонтальное расположение */
+    }
+
+    .game-hero img {
+        width: 400px; /* Размер изображения фиксированный */
+        margin-right: 30px;
+    }
+
+    .game-info h1 {
+        font-size: 36px; /* Заголовок на больших экранах */
+    }
+
+    .game-info p {
+        font-size: 18px; /* Размер текста */
+    }
+
+    .buy-btn {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    .gallery {
+        flex-direction: row; /* Картинки идут в ряд */
+        gap: 30px;
+    }
+
+    .gallery img {
+        width: 30%; /* Картинки занимают 30% ширины */
     }
 }

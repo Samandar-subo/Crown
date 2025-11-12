@@ -43,7 +43,10 @@ body {
     color: #FFD700; /* золотой */
 }
 
+<<<<<<< HEAD
 /* Навигация */
+=======
+>>>>>>> bd6ce3da529abc4e91b2a42396e3a5b97f18a2c2
 nav {
   background-color: #222; /* Тёмный фон для Navbar */
   border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
@@ -59,11 +62,14 @@ nav .navbar-toggler-icon {
 }
 
 nav ul {
+<<<<<<< HEAD
     display: flex;
     gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
+=======
+>>>>>>> bd6ce3da529abc4e91b2a42396e3a5b97f18a2c2
   padding-left: 0;
   list-style: none;
   display: flex;
@@ -72,14 +78,18 @@ nav ul {
 }
 
 nav a {
+<<<<<<< HEAD
     text-decoration: none;
     color: white;
     font-size: 19px;
     transition: 0.3s;
+=======
+>>>>>>> bd6ce3da529abc4e91b2a42396e3a5b97f18a2c2
   text-decoration: none;
   color: white;
   font-size: 18px;
   transition: 0.3s;
+<<<<<<< HEAD
 }
 
 nav a:hover {
@@ -95,6 +105,19 @@ nav ul li a {
   transition: all 0.3s ease; 
 }
 
+=======
+}
+nav ul li a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 16px; 
+  transition: all 0.3s ease; 
+}
+
+>>>>>>> bd6ce3da529abc4e91b2a42396e3a5b97f18a2c2
 
 
 

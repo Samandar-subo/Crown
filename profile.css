@@ -246,6 +246,9 @@ nav a.active {
 
 /* ===== FOOTER ===== */
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   border-top: 2px solid #FFD700;
   color: white;

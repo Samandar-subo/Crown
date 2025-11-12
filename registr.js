@@ -1,4 +1,4 @@
-const loginForm = document.querySelector('form[action="Layout.html"]');
+const loginForm = document.querySelector('form[action="layout.html"]');
 
 
 if (loginForm) {

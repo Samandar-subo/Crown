@@ -75,5 +75,5 @@ document.getElementById('registrationForm').addEventListener('submit', function(
   event.target.reset();
 
   // Перенаправление на страницу логина
-  window.location.href = "login.html";
+  window.location.href = "registr.html";
 });

@@ -25,7 +25,7 @@ if (loginForm) {
       localStorage.setItem('currentUser', JSON.stringify(userData));
 
 
-      window.location.href = "Layout.html";
+      window.location.href = "layout.html";
     } else {
       alert(" Неверный пароль!");
     }

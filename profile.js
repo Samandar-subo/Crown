@@ -90,7 +90,14 @@ if (editBtn) {
     }
   });
 }
+// Получаем кнопку гамбургера и саму панель навигации
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navMenu = document.querySelector('nav');
 
+// Обработчик события для открытия/закрытия навигации
+navbarToggler.addEventListener('click', () => {
+  navMenu.classList.toggle('show');  // Переключаем класс для отображения/скрытия
+});
 
 
 
@@ -148,4 +155,32 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Проверка текущей темы при загрузке страницы
+document.addEventListener('DOMContentLoaded', function () {
+  const themeButton = document.getElementById('themeToggleBtn');
+  const body = document.body;
+
+  // Проверяем сохранённую тему
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-theme');
+    themeButton.textContent = '🌙 Тёмная тема';
+  }
+
+  // Переключение темы с плавным переходом
+  themeButton.addEventListener('click', () => {
+    body.classList.add('theme-transition');
+
+    if (body.classList.contains('light-theme')) {
+      body.classList.remove('light-theme');
+      themeButton.textContent = '☀️ Светлая тема';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.add('light-theme');
+      themeButton.textContent = '🌙 Тёмная тема';
+      localStorage.setItem('theme', 'light');
+    }
+
+    setTimeout(() => body.classList.remove('theme-transition'), 700);
+  });
+});
 

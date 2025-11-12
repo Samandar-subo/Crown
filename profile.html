@@ -10,32 +10,32 @@
 
 <body>
 
-  
-    <header>
-      <div class="logo">
-        <img src="images/logo.png" alt="Crown Logo">
-        <span>CROWN</span>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+  <div class="logo">
+    <a href="layout.html">
+      <img src="images/logo.png" alt="Crown Logo">
+    </a>
+    <span>CROWN</span>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="gallery.html">ГАЛЕРЕЯ</a></li>
+          <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
+          <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
+          <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
+        </ul>
       </div>
-
-      <!-- Навигация -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="gallery.html">ГАЛЕРЕЯ</a></li>
-              <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
-              <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
-              <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+    </div>
+  </nav>
+</header>
+  
   <!-- ===== MAIN PROFILE AREA ===== -->
   <main class="profile-container">
     <!-- Левая часть -->
@@ -46,6 +46,7 @@
         <p id="email">Email: —</p>
         <button class="logout-btn">Выйти из аккаунта</button>
       </div>
+
 
       <div class="purchase-history">
         <h3>🛒 История покупок</h3>
@@ -70,6 +71,10 @@
         <p>Игр: 6</p>
         <p>Скриншоты: 3</p>
       </div>
+
+      <div class="theme-toggle">
+  <button id="themeToggleBtn" class="theme-btn">🌙Тёмная тема</button>
+</div>
     </aside>
   </main>
 

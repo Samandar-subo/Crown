@@ -23,9 +23,44 @@ header {
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo img { width: 40px; height: 40px; border-radius: 50%; }
 .logo span { font-size: 28px; font-weight: bold; color: #FFD700; }
-nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-nav a { text-decoration: none; color: white; font-size: 18px; transition: 0.3s; }
-nav a:hover, nav a.active { color: #FFD700; }
+nav {
+  background-color: #222; /* Тёмный фон для Navbar */
+  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+  padding: 15px 0; /* Отступы сверху и снизу */
+}
+
+nav .navbar-toggler {
+  background-color: #FFD700; /* Цвет гамбургер-меню */
+}
+nav .navbar-toggler-icon {
+  background-color: #222; /* Цвет иконки гамбургера */
+}
+
+nav ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+nav ul li a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 16px; 
+  transition: all 0.3s ease; 
+}
+
 
 .gallery-title {
   text-align: center;
@@ -290,3 +325,67 @@ footer {
 
 .prev { left: 0; }
 .next { right: 0; }
+
+/* Для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+
+  /* Уменьшаем шрифт и padding для мобильных */
+  nav a {
+    font-size: 16px;
+    
+  }
+
+  .level-circle {
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .theme-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stats h4 {
+    font-size: 16px;
+  }
+  /* Уменьшаем ширину панели навигации */
+.navbar-collapse {
+  width: 30px;  /* Уменьшаем ширину панели */
+  
+}
+}
+#toTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background: rgba(255, 215, 0, 0.85);
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+  z-index: 1000;
+}
+
+/* Эффект при наведении */
+#toTop:hover {
+  background: #ffcc00;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+/* Эффект появления */
+#toTop.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 0.4s ease;
+}

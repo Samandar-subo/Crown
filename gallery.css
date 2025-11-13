@@ -412,3 +412,203 @@ footer {
   align-items: center;
   animation: fadeInUp 0.4s ease;
 }
+/* ============================================================
+   СВЕТЛАЯ ТЕМА ДЛЯ ГАЛЕРЕИ
+============================================================ */
+
+/* Основные стили светлой темы для body */
+.light-theme {
+  background-color: #f8f9fa !important;
+  color: #1a1a1a !important;
+  background-image: none !important;
+}
+
+.light-theme::before {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Header для светлой темы */
+.light-theme header {
+  background-color: #ececec !important;
+  color: #111 !important;
+  border-bottom: 3px solid #FFD700 !important;
+}
+
+/* Логотип для светлой темы */
+.light-theme .logo span {
+  color: #000000 !important;
+}
+
+/* Навигация для светлой темы */
+.light-theme nav {
+  background-color: #d0d0d0 !important;
+  border-bottom: 3px solid #FFD700 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme nav a {
+  color: #333 !important;
+}
+
+.light-theme nav ul li a {
+  color: #333 !important;
+  font-weight: 600;
+}
+
+.light-theme nav a:hover,
+.light-theme nav ul li a:hover {
+  color: #000000 !important;
+  background-color: rgba(255, 215, 0, 0.2) !important;
+}
+
+/* Заголовок галереи для светлой темы */
+.light-theme .gallery-title {
+  color: #000000 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопки фильтров для светлой темы */
+.light-theme .filter-buttons button {
+  background: #e0e0e0 !important;
+  color: #333 !important;
+  border: 1px solid #ccc !important;
+}
+
+.light-theme .filter-buttons button.active,
+.light-theme .filter-buttons button:hover {
+  background: #FFD700 !important;
+  color: #000 !important;
+  border-color: #FFD700 !important;
+}
+
+/* Карточки игр для светлой темы */
+.light-theme .game-box {
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  color: #333 !important;
+}
+
+.light-theme .game-box:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  border-color: #FFD700 !important;
+}
+
+/* Подписи для светлой темы */
+.light-theme .caption {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #000000 !important;
+  border: 1px solid #e0e0e0 !important;
+  font-weight: 600;
+}
+
+.light-theme .game-box .caption {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #000000 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+/* Lightbox для светлой темы */
+.light-theme .lightbox {
+  background: rgba(255, 255, 255, 0.98) !important;
+}
+
+.light-theme .close,
+.light-theme .prev,
+.light-theme .next {
+  color: #333 !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.light-theme .close:hover,
+.light-theme .prev:hover,
+.light-theme .next:hover {
+  color: #000000 !important;
+}
+
+/* Кнопка "Наверх" для светлой темы */
+.light-theme #toTop {
+  background: rgba(255, 215, 0, 0.9) !important;
+  color: #000 !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.light-theme #toTop:hover {
+  background: #ffcc00 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+}
+
+/* Футер для светлой темы */
+.light-theme footer {
+  background: #ececec !important;
+  color: #333 !important;
+  border-top: 3px solid #FFD700 !important;
+}
+
+.light-theme .socials a {
+  color: #000000 !important;
+}
+
+.light-theme .socials a:hover {
+  color: #FFD700 !important;
+}
+
+/* Прогресс-бар для светлой темы */
+.light-theme #scrollProgress {
+  background: #FFD700 !important;
+}
+
+/* Контейнер галереи для светлой темы */
+.light-theme .gallery-grid {
+  background: transparent !important;
+}
+
+/* Анимации остаются без изменений, так как они не зависят от темы */
+
+/* Мобильная адаптация для светлой темы */
+@media (max-width: 768px) {
+  .light-theme nav {
+    background-color: #d0d0d0 !important;
+  }
+  
+  .light-theme .navbar-toggler {
+    background-color: #FFD700 !important;
+  }
+  
+  .light-theme .navbar-toggler-icon {
+    background-color: #333 !important;
+  }
+}
+
+/* Улучшения для очень маленьких экранов */
+@media (max-width: 480px) {
+  .light-theme .game-box {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+  
+  .light-theme .filter-buttons button {
+    background: #f0f0f0 !important;
+    color: #333 !important;
+  }
+}
+
+/* Плавные переходы между темами */
+.light-theme * {
+  transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Специфические стили для элементов галереи в светлой теме */
+.light-theme .gallery-item {
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.light-theme .gallery-item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .gallery-item::after {
+  color: #333 !important;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}

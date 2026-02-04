@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CROWN</title>
+    <title>CROWN Game Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_main_menu.css"> 
 </head>
 <body>
+  <div class="background-glow"></div>
+  
   <header>
     <div class="logo">
       <img src="images/logo.png" alt="Crown Logo">
@@ -16,63 +18,143 @@
     <nav>
       <ul>
         <li><a href="registr.html">ВХОД</a></li>
-        <li><a href="registr.html">МАГАЗИН</a></li>
-        <li><a href="registr.html">О НАС</a></li>
+        <li><a href="layout.html">МАГАЗИН</a></li>
       </ul>
     </nav>
   </header>
 
-    <div class="category-bar">
-        <div class="search-box">
-            <input type="text" placeholder="Поиск">
-            <button><img src="images/poisk.png" alt="🔍"></button>
+  <div class="category-bar">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Поиск игр..." autocomplete="off">
+      <button id="searchButton"><img src="images/poisk.png" alt="🔍"></button>
+      <div id="searchSuggestions" class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <div class="game-section">
+    <div class="row-cards" id="gamesContainer">
+      <!-- Игра 1 -->
+      <div class="game-box" data-game="forza horizon 5 racing гонки">
+        <div class="game-image">
+          <img src="images/forza5.png" alt="Forza Horizon 5" />
+          <div class="game-overlay">
+            <span class="game-rating">⭐ 4.8/5</span>
+          </div>
         </div>
+        <div class="game-info">
+          <h2>Forza Horizon 5</h2>
+          <p>Гоночная игра с открытым миром и потрясающей графикой в Мексике.</p>
+          <div class="game-meta">
+            <span class="game-price">59,99$</span>
+            <div class="game-platforms">
+              <span class="platform">PC</span>
+              <span class="platform">XBOX</span>
+            </div>
+          </div>
+          <div class="game-actions">
+            <a href="forza_horizon5.html" class="buy-btn">Купить</a>
+            <a href="forza_horizon5.html" class="details-link">Подробности</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Игра 2 -->
+      <div class="game-box" data-game="gta v grand theft auto action экшен">
+        <div class="game-image">
+          <img src="images/gta5.jpg" alt="GTA V" />
+          <div class="game-overlay">
+            <span class="game-rating">⭐ 4.9/5</span>
+          </div>
+        </div>
+        <div class="game-info">
+          <h2>GTA V</h2>
+          <p>Культовая игра с тремя персонажами и онлайн-режимом.</p>
+          <div class="game-meta">
+            <span class="game-price">29,99$</span>
+            <div class="game-platforms">
+              <span class="platform">PC</span>
+              <span class="platform">PS5</span>
+              <span class="platform">XBOX</span>
+            </div>
+          </div>
+          <div class="game-actions">
+            <a href="gta5.html" class="buy-btn">Купить</a>
+            <a href="gta5.html" class="details-link">Подробности</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Игра 3 -->
+      <div class="game-box" data-game="backrooms horror хоррор">
+        <div class="game-image">
+          <img src="images/BackRooms.png" alt="Backrooms" />
+          <div class="game-overlay">
+            <span class="game-rating">⭐ 4.2/5</span>
+          </div>
+        </div>
+        <div class="game-info">
+          <h2>Backrooms</h2>
+          <p>Action-horror: исследуйте жуткие коридоры и постарайтесь выбраться.</p>
+          <div class="game-meta">
+            <span class="game-price">4,99$</span>
+            <div class="game-platforms">
+              <span class="platform">PC</span>
+            </div>
+          </div>
+          <div class="game-actions">
+            <a href="backrooms_escsape_together.html" class="buy-btn">Купить</a>
+            <a href="backrooms_escsape_together.html" class="details-link">Подробности</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-    <div class="game-section">
-        <div class="row-cards">
-
-            <!-- Игра 1 -->
-            <div class="game-box">
-                <img src="images/forza5.png" alt="Forza Horizon 5" />
-                <div class="game-info">
-                    <h2>Forza Horizon 5</h2>
-                    <p>Гоночная игра с открытым миром и потрясающей графикой в Мексике.</p>
-                    <span class="price">59,99$</span>
-                    <a href="forza_horizon5.html" class="buy-btn">Купить</a>
-                    <br><br><a href="forza_horizon5.html">Подробности</a>
-                </div>
-            </div>
-
-            <!-- Игра 2 -->
-            <div class="game-box">
-                <img src="images/gta5.jpg" alt="GTA V" />
-                <div class="game-info">
-                    <h2>GTA V</h2>
-                    <p>Культовая игра с тремя персонажами и онлайн-режимом.</p>
-                    <span class="price">29,99$</span>
-                    <a href="gta5.html" class="buy-btn">Купить</a>
-                    <br><br><a href="gta5.html">Подробности</a>
-                </div>
-            </div>
-
-            <!-- Игра 3 -->
-            <div class="game-box">
-                <img src="images/BackRooms.png" alt="Backrooms" />
-                <div class="game-info">
-                    <h2>Backrooms</h2>
-                    <p>Action-horror: исследуйте жуткие коридоры и постарайтесь выбраться.</p>
-                    <span class="price">4,99$</span>
-                    <a href="backrooms_escsape_together.html" class="buy-btn">Купить</a>
-                    <br><br><a href="backrooms_escsape_together.html">Подробности</a>
-                </div>
-            </div>
-
-        </div>
+    <!-- Сообщение "Игры не найдены" -->
+    <div id="noGamesMessage" class="no-games-message" style="display: none;">
+      <div class="no-games-content">
+        <h3>Игры не найдены</h3>
+        <p>Попробуйте изменить поисковый запрос</p>
+        <button class="clear-search-btn">Показать все игры</button>
+      </div>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="sound.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Блок "Больше игр" -->
+    <div class="more-games-section">
+      <div class="more-games-card">
+        <div class="more-games-content">
+          <h3>Откройте мир игр</h3>
+          <p>Войдите в аккаунт, чтобы получить доступ к полной коллекции из 100+ игр</p>
+          <button class="more-games-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Показать больше игр
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Требуется авторизация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-icon">🔒</div>
+          <p>Для доступа к полной коллекции игр необходимо войти в свой аккаунт или зарегистрироваться.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+          <a href="registr.html" class="btn btn-warning">Войти / Зарегистрироваться</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js".js"></script>
+  <script src="sound.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
-</html> 
+</html>

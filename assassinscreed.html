@@ -2,121 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assassin’s Creed Valhalla</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Assassin's Creed Valhalla - CROWN Game Store</title>
   <link rel="stylesheet" href="style_assassinscreed.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
- <!-- HEADER -->
+  <div id="scrollProgress"></div>
+  <div id="progressBar"></div>
+  
+  <!-- Фон glow -->
+  <div class="background-glow"></div>
+
+  <!-- HEADER -->
   <header>
     <div class="logo">
-    <a href="layout.html">
-      <img src="images/logo.png" alt="Crown Logo">
-    </a>
-    <span>CROWN</span>
-  </div>
+      <a href="layout.html">
+        <img src="images/logo.png" alt="Crown Logo">
+      </a>
+      <span>CROWN</span>
+    </div>
+    
     <!-- Навигация -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
-              <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
-              <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
-              <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
-            </ul>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">ГАЛЕРЕЯ</a></li>
+            <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
+            <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
+            <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
-
 
   <main class="game-page">
     <section class="game-hero">
-      <img src="images/assasin1.jpg" alt="Assassin’s Creed Valhalla">
+      <div class="game-image">
+        <img src="images/assasin1.jpg" alt="Assassin's Creed Valhalla">
+      </div>
       <div class="game-info">
-        <h1>Assassin’s Creed Valhalla</h1>
-        <p>Станьте Эйвором — викингом, возглавляющим свой клан в Англии IX века. Вас ждут битвы, завоевания и политические интриги.</p>
-        <ul>
-          <li><strong>Жанр:</strong> RPG, Открытый мир</li>
+        <h1>Assassin's Creed Valhalla</h1>
+        <p class="game-description">Станьте Эйвором — викингом, возглавляющим свой клан в Англии IX века. Вас ждут битвы, завоевания и политические интриги. Исследуйте огромный открытый мир, стройте поселения и ведите свой народ к славе.</p>
+        <ul class="game-details">
+          <li><strong>Жанр:</strong> RPG, Открытый мир, Экшен</li>
           <li><strong>Дата выхода:</strong> 10 ноября 2020 года</li>
           <li><strong>Разработчик:</strong> Ubisoft Montreal</li>
           <li><strong>Издатель:</strong> Ubisoft</li>
+          <li><strong>Платформа:</strong> PC, PS4, PS5, Xbox One, Xbox Series X/S</li>
+          <li><strong>Язык:</strong> Русский, Английский</li>
         </ul>
-        <button class="buy-btn">Купить за 49.99$</button>
+        <div class="price-section">
+          <span class="price">49.99$</span>
+          <button class="buy-btn">Купить сейчас</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-features">
+      <h2>Особенности игры</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3>Эпические сражения</h3>
+          <p>Участвуйте в масштабных битвах и рейдах</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏴‍☠️</div>
+          <h3>Эра викингов</h3>
+          <p>Погрузитесь в атмосферу IX века</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏡</div>
+          <h3>Развитие поселения</h3>
+          <p>Стройте и улучшайте свою деревню</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Огромный мир</h3>
+          <p>Исследуйте Англию и Норвегию</p>
+        </div>
       </div>
     </section>
 
     <section class="screenshots">
       <h2>Скриншоты</h2>
       <div class="gallery">
-        <img src="images/assassin_valhalla_screen1.jpg" alt="AC Valhalla screenshot 1">
-        <img src="images/assassin_valhalla_screen2.jpg" alt="AC Valhalla screenshot 2">
-        <img src="images/assassin_valhalla_screen3.webp" alt="AC Valhalla screenshot 3">
+        <img src="images/assassin_valhalla_screen1.jpg" alt="AC Valhalla Screenshot 1">
+        <img src="images/assassin_valhalla_screen2.jpg" alt="AC Valhalla Screenshot 2">
+        <img src="images/assassin_valhalla_screen3.webp" alt="AC Valhalla Screenshot 3">
+      </div>
+    </section>
+
+    <section class="system-requirements">
+      <h2>Системные требования</h2>
+      <div class="requirements-grid">
+        <div class="requirements-minimum">
+          <h3>Минимальные</h3>
+          <ul>
+            <li><strong>ОС:</strong> Windows 10 (64-bit only)</li>
+            <li><strong>Процессор:</strong> AMD Ryzen 3 1200 or Intel i5-4460</li>
+            <li><strong>Память:</strong> 8 GB RAM</li>
+            <li><strong>Видеокарта:</strong> AMD R9 380 or NVIDIA GeForce GTX 960</li>
+            <li><strong>DirectX:</strong> Version 12</li>
+            <li><strong>Место на диске:</strong> 50 GB</li>
+          </ul>
+        </div>
+        <div class="requirements-recommended">
+          <h3>Рекомендуемые</h3>
+          <ul>
+            <li><strong>ОС:</strong> Windows 10 (64-bit only)</li>
+            <li><strong>Процессор:</strong> AMD Ryzen 5 1600 or Intel i7-4790</li>
+            <li><strong>Память:</strong> 8 GB RAM</li>
+            <li><strong>Видеокарта:</strong> AMD RX 570 or NVIDIA GeForce GTX 1060</li>
+            <li><strong>DirectX:</strong> Version 12</li>
+            <li><strong>Место на диске:</strong> 50 GB</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 CROWN Game Store. Все права защищены.</p>
+    <p>
+      <a href="gallery.html">Галерея</a> 
+      <a href="about_us.html">О нас</a> 
+      <a href="about_us.html">Контакты</a>
+    </p>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const buyButton = document.querySelector('.buy-btn');
-
-    buyButton.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        // Получаем информацию о текущей игре
-        const gameTitle = document.querySelector('h1').textContent; // Название игры
-        const gamePrice = document.querySelector('.buy-btn').textContent.split(' ')[2]; // Цена
-        const gameImage = document.querySelector('img').src; // Изображение игры
-
-        // Добавляем игру в корзину
-        addToCart(gameTitle, gamePrice, gameImage);
-    });
-
-    // Функция для добавления игры в корзину
-    function addToCart(gameTitle, gamePrice, gameImage) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Загружаем корзину из localStorage
-
-        // Проверяем, не добавлена ли уже эта игра
-        const alreadyInCart = cart.some(item => item.title === gameTitle);
-        if (alreadyInCart) {
-            showNotification(`${gameTitle} уже в корзине!`, '#e6b800');
-            return;
-        }
-
-        // Добавляем игру в корзину
-        cart.push({ title: gameTitle, price: gamePrice, image: gameImage });
-        localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем корзину в localStorage
-
-        // Показываем уведомление
-        showNotification(`${gameTitle} добавлена в корзину!`, '#383838ff');
-    }
-
-    // Функция для показа уведомлений
-    function showNotification(message, bgColor) {
-        const notification = document.createElement('div');
-        notification.textContent = message;
-        notification.style.backgroundColor = bgColor;
-        notification.classList.add('notification');
-        document.body.appendChild(notification);
-
-        // Убираем уведомление через 3 секунды
-        setTimeout(() => {
-            notification.remove();
-        }, 3000);
-    }
-});
-
-</script>
-<script src="sound.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="games_pages.js"></script>
+  <script src="sound.js"></script>
 </body>
 </html>

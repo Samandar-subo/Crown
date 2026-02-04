@@ -1,24 +1,38 @@
+/* -------------------- Общие стили -------------------- */
 body {
   margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
   font-family: "NDAstroneer", sans-serif;
-  background-image: url("images/main_page.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
+  overflow-x: hidden;
 }
 
-/* GRID */
+/* -------------------- Желто-белое свечение фона -------------------- */
+.background-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+  z-index: -2;
+}
+
+/* -------------------- GRID -------------------- */
 .grid-container {
   display: grid;
   grid-template-areas:
     "header header"
     "sidebar main"
     "footer footer";
-  grid-template-columns: 1fr;
+  grid-template-columns: 220px 1fr;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75);
 }
 
 a {
@@ -29,88 +43,185 @@ a:hover {
   text-decoration: none !important;
 }
 
-/* HEADER */
+/* -------------------- Шапка сайта -------------------- */
 header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background-color: rgba(0, 0, 0, 0.85);
-  border-bottom: 2px solid #FFD700;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 3px solid #FFD700;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .logo img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-}
-
-.logo span {
-  font-size: 28px;
-  font-weight: bold;
-  color: #FFD700;
-}
-
-nav {
-  position: fixed;
-  background-color: #222;
-  border-bottom: 2px solid #FFD700;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 15px 0;
-}
-
-nav .navbar-toggler {
-  background-color: #FFD700;
-}
-
-nav .navbar-toggler-icon {
-  background-color: #222;
-}
-
-nav ul {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin-left: auto;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-nav ul li a {
-  color: #FFFFFF;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 8px 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 2px solid #FFD700;
+  background: #000;
   transition: all 0.3s ease;
 }
 
-/* SIDEBAR */
+.logo:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.logo span {
+  font-size: 36px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+/* -------------------- НАВИГАЦИЯ - ИСПРАВЛЕННАЯ -------------------- */
+.navbar {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.navbar-collapse {
+  background: transparent !important;
+}
+
+.navbar-nav {
+  background: transparent !important;
+}
+
+.navbar-nav.ms-auto {
+  display: flex !important;
+  gap: 15px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  flex-direction: row !important;
+}
+
+.navbar-nav.ms-auto .nav-item {
+  background: transparent !important;
+}
+
+.navbar-nav.ms-auto .nav-link {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 10px 20px !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+  background: transparent !important;
+  border: 2px solid #FFD700 !important;
+  display: block !important;
+}
+
+.navbar-nav.ms-auto .nav-link:hover {
+  background: #FFD700 !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4) !important;
+}
+
+.navbar-dark.bg-dark {
+  background: transparent !important;
+}
+
+.container-fluid {
+  background: transparent !important;
+}
+
+#navbarNav {
+  background: transparent !important;
+}
+
+/* -------------------- Поиск -------------------- */
+.search-box {
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50px;
+  padding: 5px;
+  border: 2px solid #FFD700;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.5);
+  transform: scale(1.02);
+}
+
+.search-box input {
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #000000;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.search-box input::placeholder {
+  color: #666666;
+}
+
+.search-box button {
+  background: #FFD700;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box button:hover {
+  background: #ffed4a;
+  transform: scale(1.05);
+}
+
+.search-box button img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(0);
+}
+
+/* -------------------- Сайдбар -------------------- */
 aside {
   grid-area: sidebar;
-  background: rgba(30, 30, 30, 0.9);
-  padding: 20px;
-  border-right: 2px solid #FFD700;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 30px;
+  border-right: 3px solid #FFD700;
+  backdrop-filter: blur(10px);
+  width: 220px;
 }
 
 aside h2 {
   color: #FFD700;
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-align: center;
 }
 
 aside ul {
@@ -120,538 +231,230 @@ aside ul {
 }
 
 aside li {
-  margin: 12px 0;
+  margin: 15px 0;
 }
 
 aside a {
+  display: block;
   text-decoration: none;
-  color: white;
-  transition: 0.3s;
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
 }
 
 aside a:hover {
-  color: #FFD700;
+  background: #FFD700;
+  color: #000000;
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* MAIN */
+/* -------------------- Основной контент -------------------- */
 main {
   grid-area: main;
-  padding: 20px;
+  padding: 40px;
 }
 
 .row-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  padding: 20px 0;
+  justify-items: center;
 }
 
-/* GAME BOX */
+/* -------------------- Карточки игр -------------------- */
 .game-box {
-  background-color: rgba(42, 47, 56, 0.95);
-  border-radius: 10px;
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  height: 380px;
+  border: 2px solid #FFD700;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  flex-shrink: 0;
 }
 
 .game-box:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
+  border-color: #ffed4a;
+}
+
+.game-box.hidden {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.game-box.visible {
+  display: block !important;
+  opacity: 1;
 }
 
 .game-box img {
   width: 100%;
-  height: 160px;
+  height: 220px;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.game-box:hover img {
+  transform: scale(1.1);
 }
 
 .game-info {
-  flex: 1;
-  padding: 15px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 15px;
 }
 
 .game-info h2 {
-  font-size: 18px;
+  font-size: 22px;
   color: #FFD700;
-  margin: 0 0 8px;
-}
-
-.game-info a {
-  text-decoration: none;
-  color: inherit;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
 }
 
 .game-info p {
-  font-size: 14px;
-  color: #ccc;
-  margin: 0 0 10px;
+  font-size: 15px;
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 0;
   flex-grow: 1;
+  min-height: 48px;
 }
 
-.game-info a:hover {
-  text-decoration: none;
-  color: #FFD700;
-}
-
-/* ======= ЦЕНА и КНОПКА ======= */
 .price {
-  color: #a4d007;
+  color: #FFD700;
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin: 10px 0;
 }
 
 .buy-btn {
   display: inline-block;
-  text-align: center;
-  background-color: #FFD700;
-  color: #000;
-  padding: 8px 14px;
-  border-radius: 5px;
-  font-weight: bold;
+  padding: 15px 25px;
+  background: #FFD700;
+  color: #000000;
   text-decoration: none;
-  transition: 0.3s;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
   border: none;
-  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  width: 100%;
 }
 
 .buy-btn:hover {
-  background-color: #ffcc00;
-  transform: scale(1.05);
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+  background: #ffed4a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+  color: #000000;
 }
 
-/* FOOTER */
+/* -------------------- Футер -------------------- */
 footer {
   grid-area: footer;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   border-top: 3px solid #FFD700;
-  padding: 10px;
+  padding: 30px 20px;
+  backdrop-filter: blur(10px);
+}
+
+footer p {
+  margin: 5px 0;
+  color: #cccccc;
 }
 
 footer a {
-  color: #00aaff;
+  color: #FFD700;
   text-decoration: none;
-  margin: 0 5px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
 }
 
 footer a:hover {
+  color: #ffed4a;
   text-decoration: underline;
 }
 
-.search-box {
-  display: flex;
-  background-color: #1e2a3a;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid #333;
-  width: 500px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.search-box input {
-  flex: 1;
-  padding: 7px 10px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: white;
-  font-style: italic;
-}
-
-.search-box button {
-  background-color: #29415d;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.search-box button img {
-  width: 18px;
-  height: 18px;
-  filter: brightness(0) invert(1);
-}
-
-/* ===== КНОПКА ТЕМЫ ===== */
-.theme-toggle {
-  position: absolute;
-  top: 26px;
-  right: 480px;
-  z-index: 10;
-}
-
-.theme-btn {
-  background: linear-gradient(135deg, #c9a227, #f5d76e);
-  color: #111;
-  border: none;
-  font-weight: 600;
-  padding: 7px 16px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
-
-.theme-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 231, 95, 0.6);
-}
-
-/* Кнопка темы для мобильных */
-.mobile-theme-btn {
-  display: none;
-  background: #FFD700;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-}
-
-/* ============================================================
-   СВЕТЛАЯ ТЕМА
-============================================================ */
-.light-theme {
-  background-color: #ffffff !important;
-  color: #1a1a1a;
-  background-image: none !important;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ===== Header для светлой темы ===== */
-.light-theme header {
-  background-color: #ececec;
-  color: #111;
-  border-bottom: 3.3px solid #FFD700;
-}
-
-/* ===== Логотип для светлой темы ===== */
-.light-theme .logo span {
-  color: #000000;
-}
-
-/* ===== Светлая тема: навигация ===== */
-.light-theme nav {
-  border-bottom: 3px solid #FFD700;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 7px 0;
-}
-
-.light-theme footer {
-  background-color: #ececec;
-  color: #111;
-  border-bottom: 3.3px solid #FFD700;
-}
-
-/* ===== Настройки для футера ===== */
-.light-theme footer {
-  background-color: #f0f0f0;
-  color: #111;
-  border-top: 3.3px solid #FFD700;
-}
-
-/* Навигация */
-.light-theme .navbar-dark {
-  background-color: #d0d0d0 !important;
-}
-
-.light-theme .nav-link {
-  color: #333 !important;
-  font-weight: 600;
-}
-
-.light-theme .nav-link:hover {
-  color: #000000 !important;
-}
-
-/* Категории */
-.light-theme aside {
-  background-color: #f1f1f3;
-  border-right: 3.3px solid #FFD700;
-}
-
-.light-theme aside h2 {
-  color: #000000;
-}
-
-.light-theme aside a {
-  color: #333;
-}
-
-.light-theme aside a:hover {
-  color: #b48a1f;
-}
-
-/* Поисковик */
-.light-theme .search-box {
-  background-color: #fff;
-  border: 1px solid #aaa;
-}
-
-.light-theme .search-box input {
-  color: #000;
-}
-
-.light-theme .search-box button {
-  background-color: #e0e0e0;
-}
-
-.light-theme .search-box button img {
-  filter: brightness(0);
-}
-
-/* Карточки игр */
-.light-theme .game-box {
-  background-color: #f2f2f4;
-  color: #111;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.light-theme .game-box:hover {
-  background-color: #e9e9ec;
-  transform: scale(1.03);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Названия и описание */
-.light-theme .game-info h2 {
-  color: #222;
-}
-
-.light-theme .game-info p {
-  color: #555;
-}
-
-/* Цена */
-.light-theme .price {
-  color: #5b7500;
-  font-weight: 600;
-}
-
-/* Кнопка Купить */
-.light-theme .buy-btn {
-  background-color: #111;
-  color: #fff;
-}
-
-.light-theme .buy-btn:hover {
-  background-color: #FFD700;
-  color: #000;
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* Кнопка темы */
-.light-theme .theme-btn {
-  background: linear-gradient(135deg, #14005b, #000000);
-  color: #ffffff;
-}
-
-.light-theme .theme-btn:hover {
-  box-shadow: 0 0 10px rgba(180, 138, 31, 0.6);
-}
-
-/* ===== jQuery Enhancements — ADD-ONLY ===== */
-#progressBar {
+/* -------------------- Прогресс-бар -------------------- */
+#progressBar, #scrollProgress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 5px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #ffed4a);
   width: 0%;
-  background: linear-gradient(90deg, #7F00FF, #E100FF);
-  z-index: 9999;
-}
-
-/* Подсказки под поиском */
-#suggestions {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(100% + 4px);
-  background: #222;
-  color: #fff;
-  border-radius: 8px;
-  padding: 6px 0;
-  min-width: 220px;
-  max-width: 260px;
-  display: none;
-  z-index: 1000;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-#suggestions .suggest-item {
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-#suggestions .suggest-item:hover,
-#suggestions .suggest-item:focus {
-  background: rgba(255,255,255,0.08);
-  outline: none;
-}
-
-/* Подсветка */
-mark.hl {
-  background: #ffe066;
-  color: #111;
-  border-radius: 3px;
-  padding: 0 3px;
-}
-
-/* Toast */
-#toast-container {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 10000;
-}
-
-.toast-item {
-  display: none;
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-}
-
-/* Кнопка Highlight */
-.highlight-btn {
-  margin-left: 10px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  background: #FFD700;
-  color: #404040;
-  font-weight: 700;
-  text-decoration: #000000;
-  cursor: pointer;
-  transition: transform .2s, box-shadow .2s;
-  -webkit-text-stroke: 0.8px black;
-  color: #404040;
-  background: #111;
-  font-weight: 700;
-}
-
-.highlight-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255,215,0,.35);
-}
-
-/* Lazy fade-in */
-#lazy-gallery img, img.lazy {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-#lazy-gallery img.loaded, img.lazy.loaded {
-  opacity: 1;
-  transform: none;
-}
-
-#suggestions {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.toast-item {
-  transition: opacity 0.3s ease;
-}
-
-.highlight-btn.active {
-  background: #ffed4a;
-  box-shadow: 0 0 0 2px rgba(255,215,0,.35) inset;
-}
-
-.highlight-btn:hover {
-  transform: translateY(-1px);
-  background: #ffea00;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, .5);
-}
-
-#suggestions {
-  z-index: 2000;
-}
-
-#scrollProgress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 6px;
-  background: #ffb400;
-  width: 0;
   z-index: 9999;
   transition: width 0.15s;
 }
 
-.search-history {
-  display: none;
+/* -------------------- Подсказки поиска -------------------- */
+#suggestions {
   position: absolute;
-  top: 42px;
+  top: 100%;
   left: 0;
-  width: 250px;
-  background: #2b2b2f;
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-  overflow: hidden;
-  z-index: 9999;
+  right: 0;
+  background: #1a1a1a;
+  border: 2px solid #FFD700;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.history-item {
-  padding: 8px 12px;
+.search-suggestion-item {
+  padding: 12px 20px;
+  color: #ffffff;
   cursor: pointer;
-  border-bottom: 1px solid #3a3a3a;
-  font-size: 15px;
+  border-bottom: 1px solid #333;
+  transition: all 0.2s ease;
 }
 
-.history-item:hover {
-  background-color: #3c3c42;
+.search-suggestion-item:hover {
+  background: #FFD700;
+  color: #000000;
 }
 
-.clear-history {
-  text-align: center;
-  padding: 6px;
-  font-size: 13px;
-  color: #ffb400;
-  background: #1f1f1f;
-  cursor: pointer;
-}
-
-.clear-history:hover {
-  background: #272727;
-  color: #fff;
-}
-
-/* Стили для уведомлений */
+/* -------------------- Уведомления -------------------- */
 .notification {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #404040;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 10px;
+  background: #1a1a1a;
+  color: #FFD700;
+  padding: 15px 25px;
+  border-radius: 12px;
   font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border: 2px solid #FFD700;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
   z-index: 9999;
   animation: fadeInOut 3s ease-in-out;
 }
@@ -662,145 +465,154 @@ mark.hl {
   100% { opacity: 0; transform: translateY(-20px); }
 }
 
+/* -------------------- Модальное окно -------------------- */
+.modal-content {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 2px solid #FFD700;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.modal-header {
+  border-bottom: 1px solid #333;
+  padding: 25px 30px 15px;
+}
+
+.modal-title {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.btn-close {
+  filter: invert(1);
+  opacity: 0.8;
+}
+
+.modal-body {
+  padding: 30px;
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.modal-body p {
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal-footer {
+  border-top: 1px solid #333;
+  padding: 20px 30px;
+  gap: 15px;
+}
+
+.btn-secondary {
+  background: #666;
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+.btn-warning {
+  background: #FFD700;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
 /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
 
-/* Планшеты */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* Большие планшеты (1024px - 1200px) */
+@media (max-width: 1200px) {
   .row-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Десктопы */
-@media (min-width: 1024px) {
-  .row-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Мобильные устройства до 768px */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-  
-  .game-info h2 {
-    font-size: 16px;
-  }
-  
-  .game-info p {
-    font-size: 12px;
-  }
-  
-  .buy-btn {
-    padding: 6px 12px;
-  }
-  
-  /* Размещение гамбургера справа */
-  .navbar-toggler {
-    margin-left: auto;
-  }
-  
-  nav {
-    position: relative;
-    background-color: #222;
-    border-bottom: 2px solid #FFD700;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px 0;
-    width: 100%;
-  }
-  
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  nav a {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-  
-  .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #222;
-    z-index: 999;
-  }
-  
-  .row-cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
   }
   
   .game-box {
-    margin: 10px 0;
-    height: auto;
-    min-height: 350px;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+  }
+}
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+  header {
+    padding: 12px 15px;
   }
   
-  .stats h4 {
-    font-size: 16px;
+  .logo span {
+    font-size: 20px;
   }
   
-  /* Изменение порядка сетки для мобильных */
+  .desktop-nav li a {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  
+  .search-container {
+    padding: 90px 15px 25px;
+  }
+  
+  .row-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .game-box {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+/* Мобильные устройства (576px - 768px) */
+@media (max-width: 768px) {
   .grid-container {
     grid-template-areas:
       "header"
       "main"
       "sidebar"
       "footer";
+    grid-template-columns: 1fr;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .mobile-nav {
+    display: flex;
   }
   
   aside {
     border-right: none;
-    border-top: 2px solid #FFD700;
+    border-top: 3px solid #FFD700;
+    width: 100%;
     order: 3;
   }
   
-  .navbar-collapse {
-    position: static;
-    top: auto;
-  }
-  
-  /* Кнопка темы для мобильных */
-  .theme-toggle {
-    position: static;
-    margin-left: auto;
-    margin-right: 15px;
-  }
-  
-  .theme-btn {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-  
-  /* Улучшение подсказок поиска для мобильных */
-  #suggestions {
-    width: 90vw;
-    left: 5vw;
-    transform: none;
-  }
-  
-  .search-history {
-    width: 90vw;
-    left: 5vw;
-  }
-}
-
-/* Очень маленькие экраны до 480px */
-@media (max-width: 480px) {
-  /* Header для очень маленьких экранов */
   header {
     padding: 10px 15px;
-    flex-wrap: wrap;
+    flex-direction: row;
   }
   
   .logo span {
-    font-size: 22px;
+    font-size: 18px;
   }
   
   .logo img {
@@ -808,121 +620,35 @@ mark.hl {
     height: 35px;
   }
   
-  /* Поиск на всю ширину */
-  .search-box {
-    width: 100%;
-    order: 3;
-    margin-top: 10px;
+  .search-container {
+    padding: 80px 10px 20px;
   }
   
-  /* Основной контент */
   main {
-    padding: 10px;
+    padding: 20px;
+  }
+  
+  .row-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
   }
   
   .game-box {
-    height: auto;
-    min-height: 320px;
-  }
-  
-  .game-box img {
-    height: 140px;
-  }
-  
-  /* Уменьшаем отступы */
-  .game-info {
-    padding: 12px;
-  }
-  
-  .game-info h2 {
-    font-size: 16px;
-  }
-  
-  .game-info p {
-    font-size: 13px;
-  }
-  
-  /* Кнопка покупки */
-  .buy-btn {
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-  
-  /* Сайдбар */
-  aside {
-    padding: 15px;
-  }
-  
-  aside h2 {
-    font-size: 18px;
-  }
-  
-  /* Футер */
-  footer {
-    padding: 15px 10px;
-    text-align: center;
-  }
-  
-  footer p {
-    margin: 5px 0;
+    width: 100%;
+    max-width: 400px;
+    min-width: auto;
   }
 }
 
-/* Для очень высоких мобильных экранов */
-@media (max-height: 600px) and (max-width: 768px) {
-  .game-box {
-    height: auto;
-    min-height: 300px;
-  }
-}
-
-/* Touch улучшения */
-@media (hover: none) and (pointer: coarse) {
-  .game-box:hover {
-    transform: none;
+/* Маленькие мобильные (480px - 576px) */
+@media (max-width: 576px) {
+  header {
+    padding: 8px 12px;
+    gap: 10px;
   }
   
-  .buy-btn:active {
-    transform: scale(0.95);
-    background-color: #ffcc00;
-  }
-  
-  .touch-active {
-    transform: scale(0.95) !important;
-    opacity: 0.8;
-  }
-}
-
-/* Улучшения для навигации на мобильных */
-.navbar-toggler {
-  border: none;
-  padding: 4px 8px;
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-/* Прогресс-бар для мобильных */
-#progressBar, #scrollProgress {
-  height: 3px;
-}
-
-@media (max-width: 768px) {
-  #progressBar, #scrollProgress {
-    height: 2px;
-  }
-}
-
-/* Плавные переходы для темы */
-.theme-transition {
-  transition: all 0.7s ease;
-}
-
-/* Улучшения для очень маленьких устройств */
-@media (max-width: 360px) {
   .logo span {
-    font-size: 20px;
+    font-size: 16px;
   }
   
   .logo img {
@@ -930,16 +656,483 @@ mark.hl {
     height: 30px;
   }
   
-  .game-box {
-    min-height: 300px;
+  .search-container {
+    padding: 70px 8px 15px;
   }
   
-  .game-box img {
-    height: 120px;
+  .search-box input {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .search-box button {
+    padding: 10px 15px;
+  }
+  
+  main {
+    padding: 15px;
+  }
+  
+  .row-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .game-box {
+    max-width: 100%;
+  }
+  
+  .game-info {
+    padding: 20px;
+  }
+  
+  .game-info h2 {
+    font-size: 20px;
+    min-height: 44px;
+  }
+  
+  .game-info p {
+    font-size: 14px;
+    min-height: 40px;
+  }
+  
+  .price {
+    font-size: 18px;
   }
   
   .buy-btn {
-    padding: 5px 10px;
+    padding: 12px 20px;
     font-size: 13px;
   }
+  
+  .mobile-nav a {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  header {
+    padding: 8px 10px;
+  }
+  
+  .logo span {
+    font-size: 14px;
+  }
+  
+  .search-box input {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .search-box button {
+    padding: 8px 12px;
+  }
+  
+  main {
+    padding: 10px;
+  }
+  
+  .game-info {
+    padding: 15px;
+  }
+  
+  .game-info h2 {
+    font-size: 18px;
+    min-height: 40px;
+  }
+  
+  .game-info p {
+    font-size: 13px;
+    min-height: 36px;
+  }
+}
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+  .search-container {
+    padding: 60px 15px 15px;
+  }
+  
+  .mobile-nav {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+/* Поддержка уменьшения движения */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .game-box:hover {
+    transform: none;
+  }
+}
+
+/* Анимации */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-box {
+  animation: slideInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.game-box:nth-child(odd) { animation-delay: 0.1s; }
+.game-box:nth-child(even) { animation-delay: 0.2s; }
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffed4a;
+}
+
+/* ============================================================
+   СВЕТЛАЯ ТЕМА ДЛЯ LAYOUT
+============================================================ */
+.light-theme {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+  color: #2d3748 !important;
+}
+
+.light-theme .background-glow {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.08) 0%, transparent 50%) !important;
+}
+
+/* ===== Header для светлой темы ===== */
+.light-theme header {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  color: #2d3748 !important;
+  border-bottom: 3px solid #FFD700 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .logo span {
+  color: #2d3748 !important;
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .logo img {
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* ===== Навигация для светлой темы ===== */
+.light-theme .navbar-dark {
+  background: transparent !important;
+}
+
+.light-theme .navbar-nav.ms-auto .nav-link {
+  color: #4a5568 !important;
+  background: rgba(255, 215, 0, 0.1) !important;
+  border: 2px solid #FFD700 !important;
+  font-weight: 600 !important;
+}
+
+.light-theme .navbar-nav.ms-auto .nav-link:hover {
+  background: #FFD700 !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* ===== Поиск для светлой темы ===== */
+.light-theme .search-box {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2) !important;
+}
+
+.light-theme .search-box input {
+  color: #2d3748 !important;
+  background: transparent !important;
+}
+
+.light-theme .search-box input::placeholder {
+  color: #718096 !important;
+}
+
+.light-theme .search-box button {
+  background: #FFD700 !important;
+}
+
+.light-theme .search-box button:hover {
+  background: #ffed4a !important;
+}
+
+.light-theme .search-box button img {
+  filter: brightness(0) invert(0) !important;
+}
+
+/* ===== Сайдбар для светлой темы ===== */
+.light-theme aside {
+  background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%) !important;
+  border-right: 3px solid #FFD700 !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme aside h2 {
+  color: #2d3748 !important;
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.2) !important;
+}
+
+.light-theme aside a {
+  color: #4a5568 !important;
+  background: rgba(255, 215, 0, 0.1) !important;
+  border: 1px solid rgba(255, 215, 0, 0.2) !important;
+  font-weight: 600 !important;
+}
+
+.light-theme aside a:hover {
+  background: #FFD700 !important;
+  color: #000000 !important;
+  transform: translateX(8px) !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* ===== Карточки игр для светлой темы ===== */
+.light-theme .game-box {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15) !important;
+  color: #4a5568 !important;
+}
+
+.light-theme .game-box:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 15px 35px rgba(255, 215, 0, 0.25) !important;
+  border-color: #ffed4a !important;
+}
+
+.light-theme .game-info h2 {
+  color: #2d3748 !important;
+  text-shadow: 0 2px 4px rgba(255, 215, 0, 0.2) !important;
+}
+
+.light-theme .game-info p {
+  color: #718096 !important;
+}
+
+.light-theme .price {
+  color: #e53e3e !important;
+  font-weight: bold !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .buy-btn {
+  background: linear-gradient(135deg, #FFD700, #ffed4a) !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .buy-btn:hover {
+  background: linear-gradient(135deg, #ffed4a, #FFD700) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* ===== Футер для светлой темы ===== */
+.light-theme footer {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  color: #4a5568 !important;
+  border-top: 3px solid #FFD700 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme footer a {
+  color: #e53e3e !important;
+  font-weight: 600 !important;
+}
+
+.light-theme footer a:hover {
+  color: #c53030 !important;
+  text-decoration: underline !important;
+}
+
+/* ===== Подсказки поиска для светлой темы ===== */
+.light-theme #suggestions {
+  background: #ffffff !important;
+  border: 2px solid #FFD700 !important;
+  color: #4a5568 !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-theme .search-suggestion-item {
+  color: #4a5568 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  font-weight: 500 !important;
+}
+
+.light-theme .search-suggestion-item:hover {
+  background: #FFD700 !important;
+  color: #000000 !important;
+  transform: translateX(5px) !important;
+}
+
+/* ===== Уведомления для светлой темы ===== */
+.light-theme .notification {
+  background: linear-gradient(135deg, #ffffff, #f7fafc) !important;
+  color: #2d3748 !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2) !important;
+  font-weight: 600 !important;
+}
+
+/* ===== Модальное окно для светлой темы ===== */
+.light-theme .modal-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 2px solid #FFD700 !important;
+  color: #4a5568 !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-theme .modal-header {
+  border-bottom: 2px solid #e2e8f0 !important;
+  background: linear-gradient(135deg, #f7fafc, #edf2f7) !important;
+}
+
+.light-theme .modal-title {
+  color: #2d3748 !important;
+  font-weight: bold !important;
+}
+
+.light-theme .modal-body {
+  background: transparent !important;
+}
+
+.light-theme .modal-body p {
+  color: #718096 !important;
+  font-weight: 500 !important;
+}
+
+.light-theme .modal-footer {
+  border-top: 2px solid #e2e8f0 !important;
+  background: linear-gradient(135deg, #f7fafc, #edf2f7) !important;
+}
+
+.light-theme .btn-secondary {
+  background: #718096 !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 600 !important;
+}
+
+.light-theme .btn-secondary:hover {
+  background: #4a5568 !important;
+  transform: translateY(-1px) !important;
+}
+
+.light-theme .btn-warning {
+  background: linear-gradient(135deg, #FFD700, #ffed4a) !important;
+  color: #000000 !important;
+  border: none !important;
+  font-weight: bold !important;
+}
+
+.light-theme .btn-warning:hover {
+  background: linear-gradient(135deg, #ffed4a, #FFD700) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* ===== Прогресс-бар для светлой темы ===== */
+.light-theme #progressBar,
+.light-theme #scrollProgress {
+  background: linear-gradient(90deg, #FFD700, #ffed4a, #FFD700) !important;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* ===== Скроллбар для светлой темы ===== */
+.light-theme ::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 5px !important;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #FFD700, #ffed4a) !important;
+  border-radius: 5px !important;
+  border: 2px solid #f1f1f1 !important;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ffed4a, #FFD700) !important;
+}
+
+/* ===== Подсветка поиска для светлой темы ===== */
+.light-theme mark.hl {
+  background: #FFD700 !important;
+  color: #000000 !important;
+  border-radius: 4px !important;
+  padding: 2px 4px !important;
+  box-shadow: 0 2px 4px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* ===== Адаптивность для светлой темы ===== */
+@media (max-width: 768px) {
+  .light-theme .profile-container {
+    background: #ffffff !important;
+  }
+  
+  .light-theme aside {
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05) !important;
+  }
+}
+
+/* ===== Анимации для светлой темы ===== */
+.light-theme .game-box {
+  animation: slideInUpLight 0.6s ease forwards !important;
+}
+
+@keyframes slideInUpLight {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Плавный переход для темы ===== */
+.theme-transition {
+  transition: all 0.5s ease-in-out !important;
+}
+
+.light-theme .theme-transition * {
+  transition: all 0.5s ease-in-out !important;
 }

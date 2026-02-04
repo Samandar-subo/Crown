@@ -1,332 +1,808 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.6);
+/* ===== BACKROOMS GAME PAGE STYLES ===== */
+
+/* Базовые стили для страницы */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    color: #ffffff;
+    font-family: "NDAstroneer", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Фон glow */
+.background-glow {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+    z-index: -2;
 }
 
-
-
-body {
-    font-family: "NDAstroneer", sans-serif;
-    background-image: url("images/background_assassin_valhalla.jpeg");
-    background-size: cover; /* Фон будет растягиваться по всему экрану */
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex; /* Используем flexbox для размещения контента */
-    flex-direction: column; /* Вертикальное размещение элементов */
-    min-height: 100vh; /* Обеспечиваем, чтобы body занимал весь экран */
-}
-
-
-/* Основной контейнер */
-.game-page {
-    margin-top: 100px; /* отступ, чтобы header не перекрывал */
-    padding: 40px;
-}
-
-/* Блок с картинкой и описанием */
-.game-hero {
+/* Header */
+header {
     display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    background: rgba(0,0,0,0.7);
-    padding: 30px;
-    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 3px solid #FFD700;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
 }
 
-.game-hero img {
-    width: 400px;
-    border-radius: 10px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #FFD700;
+    background: #000;
+    transition: all 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.logo span {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Навигация */
+.navbar {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.navbar-nav.ms-auto {
+    display: flex !important;
+    gap: 15px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    flex-direction: row !important;
+}
+
+.navbar-nav.ms-auto .nav-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+    border-radius: 25px !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+    border: 2px solid #FFD700 !important;
+    display: block !important;
+}
+
+.navbar-nav.ms-auto .nav-link:hover {
+    background: #FFD700 !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4) !important;
+}
+
+/* Основной контент */
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-page {
+    margin-top: 20px;
+}
+
+/* Hero секция с игрой */
+.game-hero {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+    align-items: start;
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.game-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+
+.game-image img:hover {
+    transform: scale(1.02);
 }
 
 .game-info h1 {
     color: #FFD700;
-    margin-top: 0;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
 
-.game-info p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: white;
+.game-description {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
-.game-info ul {
+.game-details {
     list-style: none;
     padding: 0;
-    color: white;
+    margin-bottom: 30px;
 }
 
-.game-info li {
-    margin: 8px 0;
+.game-details li {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.game-details strong {
+    color: #FFD700;
+    font-weight: 600;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.price {
+    color: #FFD700;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
 }
 
 .buy-btn {
     display: inline-block;
-    background-color: #FFD700;
-    color: black;
-    font-weight: bold;
-    padding: 12px 20px;
-    border-radius: 6px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #FFD700, #ffed4a);
+    color: #000000;
     text-decoration: none;
-    transition: 0.3s;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .buy-btn:hover {
-    background-color: #e6c200;
+    background: linear-gradient(135deg, #ffed4a, #FFD700);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    color: #000000;
+}
+
+/* Секция особенностей игры */
+.game-features {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.game-features h2 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 /* Галерея скриншотов */
 .screenshots {
-    margin-top: 40px;
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    margin-bottom: 40px;
 }
 
 .screenshots h2 {
     color: #FFD700;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
 }
 
 .gallery {
-    display: flex;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .gallery img {
-    width: 30%;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .gallery img:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
-.logo {
+
+/* Секция системных требований */
+.system-requirements {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.system-requirements h2 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.requirements-minimum,
+.requirements-recommended {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.requirements-minimum h3,
+.requirements-recommended h3 {
+    color: #FFD700;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.requirements-minimum ul,
+.requirements-recommended ul {
+    list-style: none;
+    padding: 0;
+}
+
+.requirements-minimum li,
+.requirements-recommended li {
+    color: #ffffff;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.requirements-minimum strong,
+.requirements-recommended strong {
+    color: #FFD700;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.95);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
-}
-.logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; /* если хочешь круглый */
+    justify-content: center;
+    font-size: 14px;
+    border-top: 3px solid #FFD700;
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
 }
 
-.logo span {
-    font-family: "NDAstroneer", sans-serif;
-    font-size: 28px;
+footer p {
+    margin: 5px 0;
+    color: #cccccc;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffed4a;
+    text-decoration: underline;
+}
+
+/* Прогресс-бар */
+#progressBar, #scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #ffed4a);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.15s;
+}
+
+/* Уведомления */
+.game-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: #1a1a1a;
+    color: #FFD700;
+    padding: 15px 25px;
+    border-radius: 12px;
     font-weight: bold;
-    color: #FFD700; /* золотой */
-}
-
-nav {
-  background-color: #222; /* Тёмный фон для Navbar */
-  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
-  padding: 15px 0; /* Отступы сверху и снизу */
-}
-
-nav .navbar-toggler {
-  background-color: #FFD700; /* Цвет гамбургер-меню */
-}
-nav .navbar-toggler-icon {
-  background-color: #222; /* Цвет иконки гамбургера */
-}
-
-nav ul {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin-left: auto;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: 0.3s;
-}
-nav ul li a {
-  color: #FFFFFF;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 8px 16px; 
-  transition: all 0.3s ease; 
-}
-
-
-
-
-
-@font-face {
-    font-family: "NDAstroneer";
-    src: url(fonts/NDAstroneer-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-@media (max-width: 900px) {
-    nav ul {
-        gap: 15px;
-        font-size: 16px;
-    }
-    .logo span {
-        font-size: 22px;
-    }
-}
-
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #3c3c3c;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  animation: fadeInOut 3s ease;
-  z-index: 9999;
+    border: 2px solid #FFD700;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    z-index: 9999;
+    animation: fadeInOut 3s ease-in-out;
+    max-width: 300px;
+    word-wrap: break-word;
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(-20px); }
-  10%, 90% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
+    0% { opacity: 0; transform: translateX(100px); }
+    10% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(100px); }
 }
-/* Мобильные устройства (до 480px) */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px; /* Уменьшаем шрифт для мобильных */
-    }
 
+/* ===== СВЕТЛАЯ ТЕМА ДЛЯ СТРАНИЦЫ ИГРЫ ===== */
+.light-theme {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    color: #2d3748 !important;
+}
+
+.light-theme .background-glow {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.08) 0%, transparent 50%) !important;
+}
+
+.light-theme header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    color: #2d3748 !important;
+    border-bottom: 3px solid #FFD700 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .logo span {
+    color: #2d3748 !important;
+    text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .logo img {
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .navbar-nav.ms-auto .nav-link {
+    color: #4a5568 !important;
+    background: rgba(255, 215, 0, 0.1) !important;
+    border: 2px solid #FFD700 !important;
+    font-weight: 600 !important;
+}
+
+.light-theme .navbar-nav.ms-auto .nav-link:hover {
+    background: #FFD700 !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4) !important;
+}
+
+.light-theme .game-hero,
+.light-theme .game-features,
+.light-theme .screenshots,
+.light-theme .system-requirements {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15) !important;
+}
+
+.light-theme .game-info h1,
+.light-theme .game-features h2,
+.light-theme .screenshots h2,
+.light-theme .system-requirements h2 {
+    color: #2d3748 !important;
+}
+
+.light-theme .game-description {
+    color: #718096 !important;
+}
+
+.light-theme .game-details li {
+    color: #4a5568 !important;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .game-details strong {
+    color: #2d3748 !important;
+}
+
+.light-theme .price {
+    color: #e53e3e !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .buy-btn {
+    background: linear-gradient(135deg, #FFD700, #ffed4a) !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2) !important;
+}
+
+.light-theme .buy-btn:hover {
+    background: linear-gradient(135deg, #ffed4a, #FFD700) !important;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .game-image img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+.light-theme .feature-card {
+    background: rgba(255, 215, 0, 0.05) !important;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .feature-card h3 {
+    color: #2d3748 !important;
+}
+
+.light-theme .feature-card p {
+    color: #718096 !important;
+}
+
+.light-theme .gallery img {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .gallery img:hover {
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2) !important;
+}
+
+.light-theme .requirements-minimum,
+.light-theme .requirements-recommended {
+    background: rgba(255, 215, 0, 0.05) !important;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .requirements-minimum h3,
+.light-theme .requirements-recommended h3 {
+    color: #2d3748 !important;
+}
+
+.light-theme .requirements-minimum li,
+.light-theme .requirements-recommended li {
+    color: #4a5568 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .requirements-minimum strong,
+.light-theme .requirements-recommended strong {
+    color: #2d3748 !important;
+}
+
+.light-theme footer {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    color: #4a5568 !important;
+    border-top: 3px solid #FFD700 !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-theme footer a {
+    color: #e53e3e !important;
+    font-weight: 600 !important;
+}
+
+.light-theme footer a:hover {
+    color: #c53030 !important;
+    text-decoration: underline !important;
+}
+
+.light-theme .game-notification {
+    background: linear-gradient(135deg, #ffffff, #f7fafc) !important;
+    color: #2d3748 !important;
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2) !important;
+}
+
+.light-theme #progressBar,
+.light-theme #scrollProgress {
+    background: linear-gradient(90deg, #FFD700, #ffed4a, #FFD700) !important;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1024px) {
     .game-hero {
-        flex-direction: column; /* Ставим элементы в колонку */
-        align-items: center; /* Центрируем элементы */
-        padding: 20px; /* Уменьшаем отступы */
+        grid-template-columns: 350px 1fr;
+        gap: 30px;
+        padding: 30px;
     }
-
-    .game-hero img {
-        width: 100%; /* Картинка на всю ширину */
-        height: auto; /* Автоматическая высота */
-        margin-bottom: 20px; /* Добавляем отступ снизу */
-    }
-
+    
     .game-info h1 {
-        font-size: 24px; /* Уменьшаем размер заголовка */
+        font-size: 2.2rem;
     }
+}
 
-    .game-info p {
-        font-size: 14px; /* Уменьшаем текст */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
     }
-
-    .game-info ul li {
-        font-size: 14px; /* Уменьшаем шрифт списка */
+    
+    .logo span {
+        font-size: 28px;
     }
-
-    .buy-btn {
-        padding: 12px 20px; /* Уменьшаем размер кнопки */
-        font-size: 16px;
-        width: 100%; /* Кнопка на всю ширину */
+    
+    .navbar-nav.ms-auto {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .navbar-nav.ms-auto .nav-link {
+        text-align: center;
+        padding: 10px 20px !important;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .game-hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px;
         text-align: center;
     }
-
-    .gallery {
-        flex-direction: column; /* Складываем картинки в один столбец */
-        align-items: center;
+    
+    .game-image img {
+        max-width: 400px;
+        margin: 0 auto;
     }
-
-    .gallery img {
-        width: 80%; /* Уменьшаем картинку */
-        margin-bottom: 20px; /* Отступ снизу */
-    }
-
-    nav ul {
-        flex-direction: column; /* Ставим меню вертикально */
-        padding-left: 0; /* Убираем отступы */
-    }
-
-    nav ul li {
-        margin-bottom: 10px; /* Отступы между элементами */
-    }
-}
-
-/* Планшеты (от 481px до 768px) */
-@media (max-width: 768px) {
-    .game-hero {
-        flex-direction: column; /* Убираем горизонтальную верстку */
-        align-items: center; /* Центрируем элементы */
-    }
-
-    .game-hero img {
-        width: 80%; /* Картинка 80% от ширины */
-        margin-bottom: 20px; /* Отступ снизу */
-    }
-
+    
     .game-info h1 {
-        font-size: 28px; /* Размер заголовка для планшетов */
+        font-size: 2rem;
     }
-
-    .game-info p {
-        font-size: 16px; /* Размер текста */
+    
+    .price-section {
+        flex-direction: column;
+        gap: 15px;
     }
-
+    
+    .price {
+        font-size: 1.8rem;
+    }
+    
     .buy-btn {
-        padding: 12px 18px;
-        font-size: 16px;
+        width: 100%;
+        max-width: 300px;
     }
-
+    
+    .game-features,
+    .screenshots,
+    .system-requirements {
+        padding: 25px;
+    }
+    
     .gallery {
-        flex-wrap: wrap; /* Размещение картинок в несколько строк */
-        justify-content: space-around;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
     }
-
-    .gallery img {
-        width: 45%; /* Картинки занимают 45% ширины */
-        margin-bottom: 20px; /* Отступ снизу */
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .requirements-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
-/* Для больших экранов */
-@media (min-width: 769px) {
+@media (max-width: 480px) {
+    .logo span {
+        font-size: 24px;
+    }
+    
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
     .game-hero {
-        flex-direction: row; /* Горизонтальное расположение */
+        padding: 20px;
     }
-
-    .game-hero img {
-        width: 400px; /* Размер изображения фиксированный */
-        margin-right: 30px;
-    }
-
+    
     .game-info h1 {
-        font-size: 36px; /* Заголовок на больших экранах */
+        font-size: 1.8rem;
     }
-
-    .game-info p {
-        font-size: 18px; /* Размер текста */
+    
+    .game-description {
+        font-size: 1rem;
     }
-
+    
+    .game-details li {
+        font-size: 0.9rem;
+    }
+    
+    .price {
+        font-size: 1.6rem;
+    }
+    
     .buy-btn {
         padding: 12px 20px;
-        font-size: 18px;
+        font-size: 14px;
     }
-
+    
+    .game-features,
+    .screenshots,
+    .system-requirements {
+        padding: 20px;
+    }
+    
+    .game-features h2,
+    .screenshots h2,
+    .system-requirements h2 {
+        font-size: 1.6rem;
+    }
+    
     .gallery {
-        flex-direction: row; /* Картинки идут в ряд */
-        gap: 30px;
+        grid-template-columns: 1fr;
     }
-
+    
     .gallery img {
-        width: 30%; /* Картинки занимают 30% ширины */
+        height: 180px;
     }
+    
+    .feature-card {
+        padding: 15px;
+    }
+    
+    .requirements-minimum,
+    .requirements-recommended {
+        padding: 15px;
+    }
+}
+
+/* Анимации */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-hero,
+.game-features,
+.screenshots,
+.system-requirements {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffed4a;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FFD700, #ffed4a) !important;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ffed4a, #FFD700) !important;
 }

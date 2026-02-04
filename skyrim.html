@@ -2,119 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Elder Scrolls V: Skyrim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Elder Scrolls V: Skyrim - CROWN Game Store</title>
   <link rel="stylesheet" href="style_skyrim.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <div id="scrollProgress"></div>
+  <div id="progressBar"></div>
+  
+  <!-- Фон glow -->
+  <div class="background-glow"></div>
+
   <!-- HEADER -->
   <header>
     <div class="logo">
-    <a href="layout.html">
-      <img src="images/logo.png" alt="Crown Logo">
-    </a>
-    <span>CROWN</span>
-  </div>
+      <a href="layout.html">
+        <img src="images/logo.png" alt="Crown Logo">
+      </a>
+      <span>CROWN</span>
+    </div>
+    
     <!-- Навигация -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
-              <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
-              <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
-              <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
-            </ul>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">ГАЛЕРЕЯ</a></li>
+            <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
+            <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
+            <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
   </header>
-
 
   <main class="game-page">
     <section class="game-hero">
-      <img src="images/skyrim2.jpg" alt="The Elder Scrolls V: Skyrim">
+      <div class="game-image">
+        <img src="images/skyrim2.jpg" alt="The Elder Scrolls V: Skyrim">
+      </div>
       <div class="game-info">
         <h1>The Elder Scrolls V: Skyrim</h1>
-        <p>Огромный открытый мир, полный подземелий, драконов и приключений. Станьте Довакином — избранным, способным использовать силу Драконьего Крика.</p>
-        <ul>
-          <li><strong>Жанр:</strong> RPG, Открытый мир</li>
+        <p class="game-description">Огромный открытый мир, полный подземелий, драконов и приключений. Станьте Довакином — избранным, способным использовать силу Драконьего Крика. Исследуйте провинцию Скайрим и определите её судьбу в эпической битве.</p>
+        <ul class="game-details">
+          <li><strong>Жанр:</strong> RPG, Открытый мир, Фэнтези</li>
           <li><strong>Дата выхода:</strong> 11 ноября 2011 года</li>
           <li><strong>Разработчик:</strong> Bethesda Game Studios</li>
           <li><strong>Издатель:</strong> Bethesda Softworks</li>
+          <li><strong>Платформа:</strong> PC, PS3, PS4, PS5, Xbox 360, Xbox One, Xbox Series X/S, Nintendo Switch</li>
+          <li><strong>Язык:</strong> Русский, Английский</li>
         </ul>
-        <button class="buy-btn">Купить за 19.99$</button>
+        <div class="price-section">
+          <span class="price">19.99$</span>
+          <button class="buy-btn">Купить сейчас</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-features">
+      <h2>Особенности игры</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🐉</div>
+          <h3>Драконы и Драконий Крик</h3>
+          <p>Сражайтесь с драконами и используйте их силу</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3>Огромный открытый мир</h3>
+          <p>Исследуйте провинцию Скайрим без ограничений</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3>Свобода выбора</h3>
+          <p>Станьте воином, магом, вором или любым другим классом</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏰</div>
+          <h3>Боковые сюжеты</h3>
+          <p>Сотни квестов и уникальных локаций</p>
+        </div>
       </div>
     </section>
 
     <section class="screenshots">
       <h2>Скриншоты</h2>
       <div class="gallery">
-        <img src="images/skyrim_screen1.webp" alt="Skyrim screenshot 1">
-        <img src="images/skyrim_screen2.webp" alt="Skyrim screenshot 2">
-        <img src="images/skyrim_screen3.webp" alt="Skyrim screenshot 3">
+        <img src="images/skyrim_screen1.webp" alt="Skyrim Screenshot 1">
+        <img src="images/skyrim_screen2.webp" alt="Skyrim Screenshot 2">
+        <img src="images/skyrim_screen3.webp" alt="Skyrim Screenshot 3">
+      </div>
+    </section>
+
+    <section class="system-requirements">
+      <h2>Системные требования</h2>
+      <div class="requirements-grid">
+        <div class="requirements-minimum">
+          <h3>Минимальные</h3>
+          <ul>
+            <li><strong>ОС:</strong> Windows 7/Vista/XP PC (32 or 64 bit)</li>
+            <li><strong>Процессор:</strong> Intel Dual Core 2.0GHz or AMD equivalent</li>
+            <li><strong>Память:</strong> 2 GB RAM</li>
+            <li><strong>Видеокарта:</strong> DirectX 9.0c compliant video card with 512 MB of RAM</li>
+            <li><strong>DirectX:</strong> Version 9.0c</li>
+            <li><strong>Место на диске:</strong> 6 GB</li>
+          </ul>
+        </div>
+        <div class="requirements-recommended">
+          <h3>Рекомендуемые</h3>
+          <ul>
+            <li><strong>ОС:</strong> Windows 7/Vista/XP (32 or 64 bit)</li>
+            <li><strong>Процессор:</strong> Intel Core i5-750 or AMD Phenom II X4-945</li>
+            <li><strong>Память:</strong> 4 GB RAM</li>
+            <li><strong>Видеокарта:</strong> NVIDIA GTX 260 or ATI Radeon 4890</li>
+            <li><strong>DirectX:</strong> Version 9.0c</li>
+            <li><strong>Место на диске:</strong> 6 GB</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 CROWN Game Store. Все права защищены.</p>
+    <p>
+      <a href="gallery.html">Галерея</a> 
+      <a href="about_us.html">О нас</a> 
+      <a href="about_us.html">Контакты</a>
+    </p>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const buyButton = document.querySelector('.buy-btn');
-
-    buyButton.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        // Получаем информацию о текущей игре
-        const gameTitle = document.querySelector('h1').textContent; // Название игры
-        const gamePrice = document.querySelector('.buy-btn').textContent.split(' ')[2]; // Цена
-        const gameImage = document.querySelector('img').src; // Изображение игры
-
-        // Добавляем игру в корзину
-        addToCart(gameTitle, gamePrice, gameImage);
-    });
-
-    // Функция для добавления игры в корзину
-    function addToCart(gameTitle, gamePrice, gameImage) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Загружаем корзину из localStorage
-
-        // Проверяем, не добавлена ли уже эта игра
-        const alreadyInCart = cart.some(item => item.title === gameTitle);
-        if (alreadyInCart) {
-            showNotification(`${gameTitle} уже в корзине!`, '#e6b800');
-            return;
-        }
-
-        // Добавляем игру в корзину
-        cart.push({ title: gameTitle, price: gamePrice, image: gameImage });
-        localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем корзину в localStorage
-
-        // Показываем уведомление
-        showNotification(`${gameTitle} добавлена в корзину!`, '#383838ff');
-    }
-
-    // Функция для показа уведомлений
-    function showNotification(message, bgColor) {
-        const notification = document.createElement('div');
-        notification.textContent = message;
-        notification.style.backgroundColor = bgColor;
-        notification.classList.add('notification');
-        document.body.appendChild(notification);
-
-        // Убираем уведомление через 3 секунды
-        setTimeout(() => {
-            notification.remove();
-        }, 3000);
-    }
-});
-
-</script>
-<script src="sound.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="games_pages.js"></script>
+  <script src="sound.js"></script>
 </body>
 </html>

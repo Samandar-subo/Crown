@@ -1,267 +1,597 @@
-/* ===== FIXED, MODERN HEADER ===== */
+/* -------------------- Общие стили -------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+  color: #ffffff;
+  font-family: "NDAstroneer", sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+/* -------------------- Желто-белое свечение фона -------------------- */
+.background-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+  z-index: -2;
+  transition: all 0.5s ease-in-out;
+}
+
+/* -------------------- УНИФИЦИРОВАННАЯ НАВИГАЦИЯ -------------------- */
+.navbar-dark.bg-dark {
+  background: transparent !important;
+}
+
+.navbar {
+  padding: 0 !important;
+}
+
+.navbar-nav {
+  gap: 15px !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  padding: 12px 24px !important;
+  border-radius: 25px !important;
+  transition: all 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 2px solid #FFD700 !important;
+  display: block !important;
+}
+
+.navbar-nav .nav-link:hover {
+  background: #FFD700 !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4) !important;
+}
+
+.navbar-toggler {
+  border: 2px solid #FFD700 !important;
+  padding: 8px !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 215, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Для светлой темы */
+.light-theme .navbar-nav .nav-link {
+  color: #4a5568 !important;
+  background: rgba(255, 215, 0, 0.1) !important;
+  border: 2px solid #FFD700 !important;
+}
+
+.light-theme .navbar-nav .nav-link:hover {
+  background: #FFD700 !important;
+  color: #000000 !important;
+}
+
+.light-theme .navbar-toggler {
+  border: 2px solid #FFD700 !important;
+}
+
+.light-theme .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2874, 85, 104, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ============================================================
+   СВЕТЛАЯ ТЕМА ДЛЯ КОРЗИНЫ
+============================================================ */
+.light-theme {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%) !important;
+  color: #2d3748 !important;
+}
+
+.light-theme .background-glow {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.06) 0%, transparent 50%) !important;
+}
+
+/* ===== Header для светлой темы ===== */
+.light-theme header {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  color: #2d3748 !important;
+  border-bottom: 3px solid #FFD700 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .logo span {
+  color: #2d3748 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .logo img {
+  border: 2px solid #FFD700 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* ===== Контейнер корзины для светлой темы ===== */
+.light-theme .cart-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 20px 50px rgba(255, 215, 0, 0.15) !important;
+  color: #2d3748 !important;
+}
+
+.light-theme .cart-container h1 {
+  color: #2d3748 !important;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .empty-cart-message {
+  color: #718096 !important;
+}
+
+/* ===== Элементы корзины для светлой темы ===== */
+.light-theme .cart-item {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1) !important;
+  color: #4a5568 !important;
+}
+
+.light-theme .cart-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2) !important;
+  border-color: #ffed4a !important;
+}
+
+.light-theme .cart-item-info h3 {
+  color: #2d3748 !important;
+}
+
+.light-theme .cart-item-info p {
+  color: #718096 !important;
+}
+
+/* ===== Кнопки для светлой темы ===== */
+.light-theme .remove-btn {
+  background: linear-gradient(135deg, #FFD700, #ffed4a) !important;
+  color: #000000 !important;
+  border: 2px solid #FFD700 !important;
+}
+
+.light-theme .remove-btn:hover {
+  background: linear-gradient(135deg, #ffed4a, #FFD700) !important;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4) !important;
+}
+
+.light-theme .checkout-btn {
+  background: linear-gradient(135deg, #FFD700, #ffed4a) !important;
+  color: #000000 !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3) !important;
+}
+
+.light-theme .checkout-btn:hover {
+  background: linear-gradient(135deg, #ffed4a, #FFD700) !important;
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5) !important;
+}
+
+.light-theme .checkout-btn:disabled {
+  background: #a0aec0 !important;
+  border-color: #a0aec0 !important;
+  color: #718096 !important;
+  box-shadow: none !important;
+}
+
+/* ===== Футер для светлой темы ===== */
+.light-theme footer {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  color: #4a5568 !important;
+  border-top: 3px solid #FFD700 !important;
+}
+
+.light-theme footer p {
+  color: #4a5568 !important;
+}
+
+.light-theme footer a {
+  color: #e53e3e !important;
+}
+
+.light-theme footer a:hover {
+  color: #c53030 !important;
+}
+
+/* ===== Скроллбар для светлой темы ===== */
+.light-theme ::-webkit-scrollbar {
+  width: 12px !important;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: #FFD700 !important;
+  border-radius: 6px !important;
+  border: 2px solid #f1f1f1 !important;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #ffed4a !important;
+}
+
+/* ===== Плавный переход для темы ===== */
+.theme-transition * {
+  transition: all 0.5s ease-in-out !important;
+}
+
+/* -------------------- Шапка -------------------- */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 3px solid #FFD700;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(10, 10, 10, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid #FFD700;
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
-  padding: 12px 60px;
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+  transition: all 0.5s ease-in-out;
 }
 
-/* При прокрутке — чуть затемняется */
-header.scrolled {
-  background: rgba(0, 0, 0, 0.95);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
-}
-
-/* ===== LOGO ===== */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
+  gap: 15px;
 }
 
 .logo img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   border: 2px solid #FFD700;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 .logo span {
-  font-size: 26px;
+  font-size: 36px;
   font-weight: bold;
   color: #FFD700;
-  letter-spacing: 1px;
-
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+  transition: all 0.5s ease-in-out;
 }
 
-
-
-/* ===== BODY OFFSET ===== */
+/* -------------------- Основной контент -------------------- */
 body {
-  margin: 0;
-  padding-top: 90px;
-  background: url("images/main_page.webp") center/cover no-repeat fixed;
-  background-color: #0b0b0b;
-  color: white;
-  font-family: "NDAstroneer", sans-serif;
-}
-nav {
-  position: fixed;
-  background-color: #222; /* Тёмный фон для Navbar */
-  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
-  padding: 15px 0; /* Отступы сверху и снизу */
-  
+  padding-top: 120px;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== CART SECTION ===== */
+/* -------------------- Контейнер корзины -------------------- */
 .cart-container {
-  margin: 50px auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 1200px;
-  background-color: rgba(20, 20, 20, 0.9);
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-  text-align: center;
+  margin: 40px auto;
+  padding: 50px;
+  max-width: 1800px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 20px;
+  border: 2px solid #FFD700;
+  box-shadow: 0 20px 50px rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease-in-out;
+  flex: 1;
 }
 
 .cart-container h1 {
-  color: #FFD700;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.checkout-btn {
-  background-color: #FFD700;
-  color: #000;
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
   text-align: center;
+  color: #FFD700;
+  font-size: 42px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.checkout-btn:hover {
-  background-color: #e6b800;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+.empty-cart-message {
+  text-align: center;
+  color: #cccccc;
+  font-size: 18px;
+  padding: 60px 20px;
+  font-style: italic;
 }
 
-/* Для мобильных устройств (до 768px) */
-@media (max-width: 768px) {
-
-  /* Уменьшаем шрифт и padding для мобильных */
-  nav a {
-    font-size: 16px;
-    
-  }
-
-  .level-circle {
-    font-size: 20px;
-    width: 60px;
-    height: 60px;
-  }
-
-  .theme-btn {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-
-  .stats h4 {
-    font-size: 16px;
-  }
-  /* Уменьшаем ширину панели навигации */
-.navbar-collapse {
-  width: 30px;  /* Уменьшаем ширину панели */
-  
-}
+/* -------------------- Элементы корзины -------------------- */
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
 }
 
-/* Адаптация для планшетов */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .cart-container {
-    margin: 140px auto;
-    width: 90%;
-    padding: 20px;
-  }
-}
-
-/* Стиль для карт товаров в корзине */
 .cart-item {
   display: flex;
   align-items: center;
-  margin: 20px 0;
-  background-color: rgba(30, 30, 30, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid #FFD700;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease forwards;
+  opacity: 0;
+  transform-origin: center;
 }
 
-.cart-item .cart-item-info {
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+  border-color: #ffed4a;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #FFD700;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+.cart-item:hover img {
+  transform: scale(1.05);
+}
+
+.cart-item-info {
   flex: 1;
   text-align: left;
-  padding-left: 15px;
+  min-width: 0;
+  margin-right: 25px;
 }
 
-.cart-item .cart-item-info h3 {
-  font-size: 18px;
+.cart-item-info h3 {
   color: #FFD700;
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  font-weight: bold;
+  word-wrap: break-word; /* Перенос длинных слов */
+  line-height: 1.3; /* Улучшил межстрочный интервал */
 }
 
-.cart-item .cart-item-info p {
-  color: #ccc;
+.cart-item-info p {
+  color: #cccccc;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
 }
 
-/* Размеры изображений в корзине */
-.cart-item img {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 15px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-  .cart-item img {
-    width: 60px;
-    height: 60px;
-  }
-}
-/* Изменяем позиционирование кнопки гамбургера */
- nav .navbar-toggler {
-  background-color: #FFD700; /* Желтый фон для кнопки гамбургера */
-    
-}
-
-nav  .navbar-toggler-icon {
-  background-color: #222;
-
-}
-
-/* При добавлении класса ms-auto */
-.navbar-nav {
-  margin-left: auto;
-}
-
-
-@media (max-width: 768px) {
-  /* Размещение гамбургера справа */
-  .navbar-toggler {
-    margin-left: auto;
-  }
-}
-
-
-.navbar-toggler.ms-auto {
-  margin-left: auto;  /* Это выровняет гамбургер в правую часть */
-}
-
-/* Стиль для кнопки "Удалить" в корзине */
+/* -------------------- Кнопки -------------------- */
 .remove-btn {
-  background-color: #FFD700; /* Желтый фон для кнопки "Удалить" */
-  color: black;              /* Черный текст */
-  padding: 6px 12px;         /* Отступы */
-  border-radius: 6px;        /* Округление углов */
-  font-weight: bold;         /* Жирный шрифт */
-  font-size: 14px;           /* Размер шрифта */
-  border: none;              /* Без границ */
-  cursor: pointer;           /* Курсор указатель */
-  transition: all 0.3s ease; /* Плавные переходы */
+  background: #FFD700;
+  color: #000000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .remove-btn:hover {
-  background-color: #e6b800; /* Подсветка при наведении */
-  transform: scale(1.05);     /* Легкое увеличение кнопки */
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Тень при наведении */
+  background: #ffed4a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
 }
 
-
-/* Размеры изображений в корзине */
-.cart-item img {
-  width: 70px;         /* Устанавливаем фиксированную ширину */
-  height: 70px;        /* Устанавливаем фиксированную высоту */
-  object-fit: cover;   /* Сохраняем пропорции и обрезаем изображение */
-  border-radius: 8px;  /* Округляем углы изображения */
-  margin-right: 15px;  /* Добавляем отступ справа */
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Тень для изображения */
-}
-
-/* Кнопка "Оформить заказ" */
 .checkout-btn {
-  background-color: #FFD700; /* Желтый фон */
-  color: #000;               /* Черный текст */
-  padding: 12px 30px;        /* Отступы */
-  font-size: 18px;           /* Размер шрифта */
-  font-weight: bold;         /* Жирный шрифт */
-  border: none;              /* Без границ */
-  border-radius: 8px;        /* Округление углов */
-  cursor: pointer;           /* Курсор указатель */
-  transition: 0.3s ease;      /* Плавные переходы */
-  text-align: center;        /* Выравнивание текста по центру */
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  background: #FFD700;
+  color: #000000;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
 .checkout-btn:hover {
-  background-color: #e6b800; /* Подсветка при наведении */
-  transform: scale(1.05);     /* Легкое увеличение кнопки */
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5); /* Тень */
+  background: #ffed4a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
 }
 
+.checkout-btn:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 
+/* -------------------- Анимации -------------------- */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes slideOut {
+  to {
+    opacity: 0;
+    transform: translateX(100px);
+    height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
+.cart-item.removing {
+  animation: slideOut 0.4s ease forwards;
+  overflow: hidden;
+}
+
+.cart-item:nth-child(1) { animation-delay: 0.1s; }
+.cart-item:nth-child(2) { animation-delay: 0.2s; }
+.cart-item:nth-child(3) { animation-delay: 0.3s; }
+.cart-item:nth-child(4) { animation-delay: 0.4s; }
+.cart-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Для светлой темы */
+.light-theme .cart-item.removing {
+  animation: slideOut 0.4s ease forwards;
+}
+
+/* -------------------- Футер -------------------- */
+footer {
+  background: rgba(0, 0, 0, 0.95);
+  border-top: 3px solid #FFD700;
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: auto;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease-in-out;
+}
+
+footer p {
+  color: #cccccc;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* -------------------- Адаптивность -------------------- */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .logo span {
+    font-size: 28px;
+  }
+  
+  .navbar-nav {
+    gap: 10px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 10px 20px !important;
+    font-size: 14px;
+  }
+  
+  body {
+    padding-top: 140px;
+  }
+  
+  .cart-container {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+  
+  .cart-container h1 {
+    font-size: 32px;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .cart-item img {
+    margin-right: 0;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .cart-item-info {
+    text-align: center;
+  }
+  
+  .checkout-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 24px;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .cart-container h1 {
+    font-size: 28px;
+  }
+  
+  .cart-item-info h3 {
+    font-size: 18px;
+  }
+  
+  .cart-item-info p {
+    font-size: 14px;
+  }
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffed4a;
+}

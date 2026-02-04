@@ -2,118 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backrooms: Escape Together</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Backrooms: Escape Together - CROWN Game Store</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_backrooms.css">
 </head>
 <body>
-   <!-- HEADER -->
-  <header>
-    <div class="logo">
-    <a href="layout.html">
-      <img src="images/logo.png" alt="Crown Logo">
-    </a>
-    <span>CROWN</span>
-  </div>
-    <!-- Навигация -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <div id="scrollProgress"></div>
+    <div id="progressBar"></div>
+    
+    <!-- Фон glow -->
+    <div class="background-glow"></div>
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
-              <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
-              <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
-              <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
-            </ul>
-          </div>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <a href="layout.html">
+                <img src="images/logo.png" alt="Crown Logo">
+            </a>
+            <span>CROWN</span>
         </div>
-      </nav>
-  </header>
 
+        <!-- Навигация -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">ГАЛЕРЕЯ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
     <main class="game-page">
         <section class="game-hero">
-            <img src="images/backrooms_icon.webp" alt="Forza Horizon 5">
+            <div class="game-image">
+                <img src="images/backrooms_icon.webp" alt="Backrooms: Escape Together">
+            </div>
             <div class="game-info">
                 <h1>Backrooms: Escape Together</h1>
-                <p>Кооперативный хоррор на выживание для 1–6 игроков с реалистичной графикой на базе Unreal Engine 5. Девять процедурно генерируемых уровней: лиминальный мир, головоломки и существа. Новые уровни и контент регулярно</p>
-                <ul>
+                <p class="game-description">Кооперативный хоррор на выживание для 1–6 игроков с реалистичной графикой на базе Unreal Engine 5. Девять процедурно генерируемых уровней: лиминальный мир, головоломки и существа. Новые уровни и контент регулярно добавляются.</p>
+                <ul class="game-details">
                     <li><strong>Жанр:</strong> Хоррор, Кооператив</li>
                     <li><strong>Дата выхода:</strong> 18 октября 2022</li>
                     <li><strong>Разработчик:</strong> Triiodide Studios</li>
                     <li><strong>Издатель:</strong> Triiodide Studios</li>
+                    <li><strong>Платформа:</strong> PC</li>
+                    <li><strong>Язык:</strong> Русский, Английский</li>
                 </ul>
-                <button class="buy-btn">Купить за 4.99$</button>
+                <div class="price-section">
+                    <span class="price">4.99$</span>
+                    <button class="buy-btn">Купить сейчас</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-features">
+            <h2>Особенности игры</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Кооператив</h3>
+                    <p>Играйте вместе с друзьями до 6 человек</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎲</div>
+                    <h3>Процедурная генерация</h3>
+                    <p>Уровни генерируются случайным образом</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔦</div>
+                    <h3>Реалистичная графика</h3>
+                    <p>На движке Unreal Engine 5</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Головоломки</h3>
+                    <p>Сложные загадки и испытания</p>
+                </div>
             </div>
         </section>
 
         <section class="screenshots">
             <h2>Скриншоты</h2>
             <div class="gallery">
-                <img src="images/backrooms_screen1.jpg" alt="backrooms screenshot 1">
-                <img src="images/backrooms_screen2.jpg" alt="backrooms screenshot 2">
-                <img src="images/backrooms_screen3.jpg" alt="backrooms screenshot 3">
+                <img src="images/backrooms_screen1.jpg" alt="Backrooms Screenshot 1">
+                <img src="images/backrooms_screen2.jpg" alt="Backrooms Screenshot 2">
+                <img src="images/backrooms_screen3.jpg" alt="Backrooms Screenshot 3">
+            </div>
+        </section>
+
+        <section class="system-requirements">
+            <h2>Системные требования</h2>
+            <div class="requirements-grid">
+                <div class="requirements-minimum">
+                    <h3>Минимальные</h3>
+                    <ul>
+                        <li><strong>ОС:</strong> Windows 10 64-bit</li>
+                        <li><strong>Процессор:</strong> Intel Core i5-4460 or AMD Ryzen 3 1200</li>
+                        <li><strong>Память:</strong> 8 GB RAM</li>
+                        <li><strong>Видеокарта:</strong> NVIDIA GeForce GTX 1060 or AMD Radeon RX 580</li>
+                        <li><strong>DirectX:</strong> Version 12</li>
+                        <li><strong>Место на диске:</strong> 20 GB</li>
+                    </ul>
+                </div>
+                <div class="requirements-recommended">
+                    <h3>Рекомендуемые</h3>
+                    <ul>
+                        <li><strong>ОС:</strong> Windows 10 64-bit</li>
+                        <li><strong>Процессор:</strong> Intel Core i7-7700 or AMD Ryzen 5 3600</li>
+                        <li><strong>Память:</strong> 16 GB RAM</li>
+                        <li><strong>Видеокарта:</strong> NVIDIA GeForce RTX 2060 or AMD Radeon RX 5700</li>
+                        <li><strong>DirectX:</strong> Version 12</li>
+                        <li><strong>Место на диске:</strong> 20 GB</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2025 CROWN Game Store. Все права защищены.</p>
+        <p>
+            <a href="gallery.html">Галерея</a> 
+            <a href="about_us.html">О нас</a> 
+            <a href="about_us.html">Контакты</a>
+        </p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const buyButton = document.querySelector('.buy-btn');
-
-    buyButton.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        // Получаем информацию о текущей игре
-        const gameTitle = document.querySelector('h1').textContent; // Название игры
-        const gamePrice = document.querySelector('.buy-btn').textContent.split(' ')[2]; // Цена
-        const gameImage = document.querySelector('img').src; // Изображение игры
-
-        // Добавляем игру в корзину
-        addToCart(gameTitle, gamePrice, gameImage);
-    });
-
-    // Функция для добавления игры в корзину
-    function addToCart(gameTitle, gamePrice, gameImage) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Загружаем корзину из localStorage
-
-        // Проверяем, не добавлена ли уже эта игра
-        const alreadyInCart = cart.some(item => item.title === gameTitle);
-        if (alreadyInCart) {
-            showNotification(`${gameTitle} уже в корзине!`, '#e6b800');
-            return;
-        }
-
-        // Добавляем игру в корзину
-        cart.push({ title: gameTitle, price: gamePrice, image: gameImage });
-        localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем корзину в localStorage
-
-        // Показываем уведомление
-        showNotification(`${gameTitle} добавлена в корзину!`, '#383838ff');
-    }
-
-    // Функция для показа уведомлений
-    function showNotification(message, bgColor) {
-        const notification = document.createElement('div');
-        notification.textContent = message;
-        notification.style.backgroundColor = bgColor;
-        notification.classList.add('notification');
-        document.body.appendChild(notification);
-
-        // Убираем уведомление через 3 секунды
-        setTimeout(() => {
-            notification.remove();
-        }, 3000);
-    }
-});
-
-</script>
-<script src="sound.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="games_pages.js"></script>
+    <script src="sound.js"></script>
 </body>
 </html>

@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>О нас</title>
-  <link rel="stylesheet" href="about_us.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>О нас - CROWN Game Store</title>
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="about_us.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-  <link rel="style" href="about_us.css" />
-</head>
-<body>
+  <div id="scrollProgress"></div>
+  <div id="progressBar"></div>
+  
+  <!-- Фон glow -->
+  <div class="background-glow"></div>
 
-  <header>
-    <div class="logo">
-    <a href="layout.html">
-      <img src="images/logo.png" alt="Crown Logo">
-    </a>
-    <span>CROWN</span>
-  </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="grid-container">
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="logo">
+        <a href="layout.html">
+          <img src="images/logo.png" alt="Crown Logo">
+        </a>
+        <span>CROWN</span>
+      </div>
+
+      <!-- Навигация -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -29,64 +35,120 @@
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-              
-            
               <li class="nav-item"><a class="nav-link" href="layout.html">МАГАЗИН</a></li>
-              <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
               <li class="nav-item"><a class="nav-link" href="gallery.html">ГАЛЕРЕЯ</a></li>
               <li class="nav-item"><a class="nav-link" href="korzina.html">КОРЗИНА</a></li>
+              <li class="nav-item"><a class="nav-link" href="profile.html">ПРОФИЛЬ</a></li>
+              <li class="nav-item"><a class="nav-link" href="about_us.html">О НАС</a></li>
             </ul>
           </div>
         </div>
       </nav>
-  </header>
+    </header>
 
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="about-main">
+      <div class="about-container">
+        <div class="about-hero">
+          <h1>О <span class="highlight">CROWN</span></h1>
+          <p class="hero-subtitle">Ваш надежный партнер в мире видеоигр</p>
+        </div>
 
-  <footer class="about-footer">
-    <h2>Добро пожаловать в <span>CROWN</span> — онлайн магазин видеоигр.</h2>
+        <div class="about-content">
+          <section class="about-section">
+            <h2>Добро пожаловать в <span class="highlight">CROWN</span> — онлайн магазин видеоигр</h2>
+            
+            <div class="mission-cards">
+              <div class="mission-card">
+                <div class="mission-icon">🎯</div>
+                <h3>Наша цель</h3>
+                <p>Проект CROWN — это веб-сайт, разработанный как прототип онлайн-магазина цифровых видеоигр.</p>
+              </div>
+              
+              <div class="mission-card">
+                <div class="mission-icon">🚀</div>
+                <h3>Наша миссия</h3>
+                <p>Предоставить пользователям простой и удобный способ просмотра, выбора и покупки игр.</p>
+              </div>
+              
+              <div class="mission-card">
+                <div class="mission-icon">💡</div>
+                <h3>Наше видение</h3>
+                <p>Создать лучшую платформу для геймеров с современным интерфейсом и широким выбором игр.</p>
+              </div>
+            </div>
 
-    <h3>Наша цель</h3>
-    <p>
-      Проект CROWN — это веб-сайт, разработанный как прототип онлайн-магазина
-      цифровых видеоигр. Основная цель сайта — предоставить пользователям простой
-      и удобный способ просмотра, выбора и покупки игр в онлайн-формате.
-    </p>
-    <p>
-      На сайте представлены карточки популярных игр с изображением, описанием,
-      ценой и кнопкой "Купить". Интерфейс выполнен в современном стиле, с адаптацией
-      под разные устройства.
-    </p>
-    <p>
-      Проект разработан с использованием HTML и CSS и демонстрирует основы
-      фронтенд-разработки. В будущем он может быть расширен с добавлением
-      регистрации, базы данных, платёжных систем и функциональности полноценного
-      интернет-магазина.
-    </p>
+            <div class="about-text">
+              <p>На сайте представлены карточки популярных игр с изображением, описанием, ценой и кнопкой "Купить". Интерфейс выполнен в современном стиле, с адаптацией под разные устройства.</p>
+              <p>Проект разработан с использованием HTML и CSS и демонстрирует основы фронтенд-разработки. В будущем он может быть расширен с добавлением регистрации, базы данных, платёжных систем и функциональности полноценного интернет-магазина.</p>
+            </div>
+          </section>
 
-    <h3>Наша команда</h3>
-    <ul>
-      <li>Babakhanov Samandar</li>
-      <li>Yerlik Adil</li>
-      <li>Telman Zhalgas</li>
-    </ul>
+          <section class="team-section">
+            <h2>Наша команда</h2>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-avatar">BS</div>
+                <h4>Babakhanov Samandar</h4>
+                <p>Frontend Developer</p>
+              </div>
+              
+              <div class="team-member">
+                <div class="member-avatar">YA</div>
+                <h4>Yerlik Adil</h4>
+                <p>Backend Developer</p>
+              </div>
+              
+              <div class="team-member">
+                <div class="member-avatar">TZ</div>
+                <h4>Telman Zhalgas</h4>
+                <p>Full Stack Developer</p>
+              </div>
+            </div>
+          </section>
 
-    <h3>Контакты</h3>
-    <p>Номер для тех поддержки: 8 777 777 7777</p>
-    <p>
-      Ссылка на социальные сети: <br />
-      <a href="https://www.instagram.com/babakhanovv_01?igsh=MTBvZTc5ZGUyM2psOQ==">Babakhanov Samandar</a><br />
-      <a href="https://www.instagram.com/telmanzz?igsh=Njg0dW1vZ2E0YWxk">Telman Zhalgas</a><br />
-      <a href="https://www.instagram.com/adillskiy?igsh=dnRjOWFicG9vNnFv&utm_source=qr">Adil Yerlik</a>
-    </p>
-  </footer>
+          <section class="contacts-section">
+            <h2>Контакты</h2>
+            <div class="contacts-grid">
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-info">
+                  <h4>Техническая поддержка</h4>
+                  <p>8 777 777 7777</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <div class="contact-info">
+                  <h4>Социальные сети</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/babakhanovv_01?igsh=MTBvZTc5ZGUyM2psOQ==" class="social-link">Babakhanov Samandar</a>
+                    <a href="https://www.instagram.com/telmanzz?igsh=Njg0dW1vZ2E0YWxk" class="social-link">Telman Zhalgas</a>
+                    <a href="https://www.instagram.com/adillskiy?igsh=dnRjOWFicG9vNnFv&utm_source=qr" class="social-link">Adil Yerlik</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
 
-  <footer>
-    <p>© 2025 Crown Team — Samandar, Zhalgas, Adil | AITU</p>
-  </footer>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>© 2025 Crown Team — Samandar, Zhalgas, Adil | AITU</p>
+      <p>
+        <a href="gallery.html">Галерея</a> 
+        <a href="about_us.html">О нас</a> 
+        <a href="about_us.html">Контакты</a>
+      </p>
+    </footer>
+  </div>
 
+  <script src="Layout.js"></script>
+  <script src="about_us.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="sound.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-
 </body>
+</html>

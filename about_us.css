@@ -1,358 +1,485 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
+/* ===== ABOUT US SPECIFIC STYLES ===== */
 
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-
-    background-image: url("images/main_page.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
-
-    color: white; 
-    font-family: "NDAstroneer", sans-serif;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; /* если хочешь круглый */
-}
-
-.logo span {
-    font-family: "NDAstroneer", sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: #FFD700; /* золотой */
-}
-
-/* Навигация */
-nav {
-  background-color: #222; /* Тёмный фон для Navbar */
-  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
-  padding: 15px 0; /* Отступы сверху и снизу */
-}
-
-nav .navbar-toggler {
-  background-color: #FFD700; /* Цвет гамбургер-меню */
-}
-nav .navbar-toggler-icon {
-  background-color: #222; /* Цвет иконки гамбургера */
-}
-
-nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin-left: auto;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: 0.3s;
-}
-nav ul li a {
-  color: #FFFFFF;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 8px 16px; 
-  transition: all 0.3s ease; 
-}
-
-
-
-
-
-@font-face {
-    font-family: "NDAstroneer";
-    src: url(fonts/NDAstroneer-Regular.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-@media (max-width: 900px) {
-    nav ul {
-        gap: 15px;
-        font-size: 16px;
-    }
-    .logo span {
-        font-size: 22px;
-    }
-}
-
-
-
-
-
-
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url("images/main_page.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: sans-serif;
-  color: white;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 100;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.logo span {
-  font-size: 28px;
-  font-weight: bold;
-  color: #FFD700;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #FFD700;
-}
-
-.game-section {
-  padding: 140px 40px 80px;
-}
-
-.row-cards {
+/* Основной контент страницы "О нас" */
+.about-main {
+  grid-area: main;
+  padding: 40px;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 20px;
 }
 
+.about-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
 
-.game-box {
-  width: 320px;
-  background-color: #2a2f38;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s;
+/* Hero секция */
+.about-hero {
+  text-align: center;
+  padding: 60px 0 40px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #FFD700;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  color: #FFD700;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+  color: #FFD700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #cccccc;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Секции контента */
+.about-section {
+  margin-bottom: 60px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  color: #FFD700;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Карточки миссии */
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.mission-card {
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #FFD700;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+  max-width: 350px;
+  width: 100%;
+}
+
+.mission-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(255, 215, 0, 0.25);
+}
+
+.mission-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.mission-card h3 {
+  color: #FFD700;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.mission-card p {
+  color: #cccccc;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Текст о компании */
+.about-text {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  text-align: center;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.about-text p {
+  color: #cccccc;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Секция команды */
+.team-section {
+  margin-bottom: 60px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-section h2 {
+  font-size: 2.2rem;
+  color: #FFD700;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.team-member {
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #FFD700;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+  max-width: 280px;
+  width: 100%;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.25);
+}
+
+.member-avatar {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #FFD700, #ffed4a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.team-member h4 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.team-member p {
+  color: #FFD700;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Секция контактов */
+.contacts-section {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contacts-section h2 {
+  font-size: 2.2rem;
+  color: #FFD700;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.contact-item {
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #FFD700;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+}
+
+.contact-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.25);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
   flex-shrink: 0;
 }
 
-.game-box:hover {
-  transform: scale(1.05);
-}
-
-.game-box img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.game-info {
-  padding: 20px;
-}
-
-.game-info h2 {
-  font-size: 20px;
+.contact-info h4 {
+  color: #FFD700;
+  font-size: 1.3rem;
   margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.contact-info p {
+  color: #cccccc;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-link {
+  color: #00aaff !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.social-link:hover {
+  color: #ffed4a !important;
+  text-decoration: underline !important;
+  transform: translateX(5px);
+}
+
+/* ===== СВЕТЛАЯ ТЕМА ДЛЯ ABOUT US ===== */
+.light-theme .about-hero h1 {
   color: #FFD700;
 }
 
-.game-info p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #ddd;
+.light-theme .hero-subtitle {
+  color: #718096;
 }
 
-.price {
-  color: #a4d007;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.buy-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: #FFD700;
-  color: black;
-  padding: 8px 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.buy-btn:hover {
-  background-color: #e6b800;
-}
-
-
-
-
-
-.category-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(90deg, #223344, #2a3a50);
-  padding: 10px 30px;
-  margin-top: 70px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.category-menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-.category-menu li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.category-menu li a:hover {
-  color: #FFD700;
-}
-
-.search-box {
-  display: flex;
-  background-color: #1e2a3a;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid #333;
-}
-
-.search-box input {
-  padding: 6px 10px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: white;
-  font-style: italic;
-}
-
-.search-box button {
-  background-color: #29415d;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.search-box button img {
-  width: 18px;
-  height: 18px;
-  filter: brightness(0) invert(1);
-}
-
-
-
-.about-footer {
-  background-color: rgba(0, 0, 0, 0.75);
-  color: white;
-  padding: 60px 40px;
+.light-theme .about-section h2,
+.light-theme .team-section h2,
+.light-theme .contacts-section h2 {
+  color: #2d3748;
   text-align: center;
-  margin-top: 120px;
-  border-top: 3px solid #ffcc00;
 }
 
-.about-footer h2 {
-  font-size: 22px;
-  color: #ccc;
+.light-theme .about-section,
+.light-theme .team-section,
+.light-theme .contacts-section {
+  text-align: center;
 }
 
-.about-footer h2 span {
-  color: #FFD700;
-  font-weight: bold;
+.light-theme .mission-card,
+.light-theme .team-member,
+.light-theme .contact-item {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid #FFD700;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.1);
 }
 
-.about-footer h3 {
-  margin-top: 30px;
-  font-size: 20px;
-  color: #FFD700;
+.light-theme .mission-card h3,
+.light-theme .team-member h4,
+.light-theme .contact-info h4 {
+  color: #2d3748;
 }
 
-.about-footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
+.light-theme .mission-card p,
+.light-theme .team-member p,
+.light-theme .contact-info p {
+  color: #718096;
 }
 
-.about-footer ul li {
-  margin: 5px 0;
-  font-size: 16px;
+.light-theme .about-text {
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
-.about-footer a {
-  color: #00aaff;
-  text-decoration: none;
+.light-theme .about-text p {
+  color: #4a5568;
 }
 
-.about-footer a:hover {
-  text-decoration: underline;
+.light-theme .member-avatar {
+  background: linear-gradient(135deg, #FFD700, #ffed4a);
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.light-theme .social-link {
+  color: #e53e3e !important;
+}
+
+.light-theme .social-link:hover {
+  color: #c53030 !important;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+  .about-main {
+    padding: 20px;
+  }
+  
+  .about-hero {
+    padding: 40px 0 30px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .mission-cards,
+  .team-grid,
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .mission-card,
+  .team-member,
+  .contact-item {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .about-section h2,
+  .team-section h2,
+  .contacts-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .about-text {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .about-hero {
+    padding: 30px 0 20px;
+  }
+  
+  .mission-card,
+  .team-member,
+  .contact-item {
+    padding: 15px;
+  }
+  
+  .member-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+  
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-item {
+    max-width: 100%;
+  }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mission-card,
+.team-member,
+.contact-item {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.mission-card:nth-child(1) { animation-delay: 0.1s; }
+.mission-card:nth-child(2) { animation-delay: 0.2s; }
+.mission-card:nth-child(3) { animation-delay: 0.3s; }
+
+.team-member:nth-child(1) { animation-delay: 0.2s; }
+.team-member:nth-child(2) { animation-delay: 0.3s; }
+.team-member:nth-child(3) { animation-delay: 0.4s; }
+
+.contact-item:nth-child(1) { animation-delay: 0.3s; }
+.contact-item:nth-child(2) { animation-delay: 0.4s; }
+
+/* ЦЕНТРИРОВАНИЕ ВСЕГО КОНТЕНТА */
+.about-main {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.about-container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.about-hero,
+.about-section,
+.team-section,
+.contacts-section {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.mission-cards,
+.team-grid,
+.contacts-grid {
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+.about-text {
+  text-align: center !important;
+  margin: 0 auto !important;
 }

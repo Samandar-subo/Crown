@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/">Crown Game Store</a>
+            <a href="/" class="btn btn-outline-light btn-sm">Continue Shopping</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="mb-4">Shopping Cart</h2>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body" id="cartContainer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Order Summary</h4>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">0 KZT</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-4">
+                            <span class="h5">Total:</span>
+                            <span class="h5 fw-bold text-primary" id="total">0 KZT</span>
+                        </div>
+                        
+
+                        <button id="placeOrderBtn" class="btn btn-success w-100 py-2 fw-bold shadow-sm">
+                            Place Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/cart.js"></script>
+</body>
+</html>
